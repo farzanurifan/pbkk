@@ -47,7 +47,7 @@
     <header id="header" >
         <div class="container">
             <div id="logo" class="pull-left">
-                <h1><a href="#body" class="scrollto">INTER-<span>LIBRARY LOAN</span></a></h1>
+                <h1><a href="#body" class="scrollto">ITS-<span>LELANG</span></a></h1>
                 <!-- Uncomment below if you prefer to use an image logo -->
                 <!-- <a href="#body"><img src="img/logo.png" alt="" title="" /></a>-->
             </div>
@@ -104,7 +104,7 @@
     <footer id="footer">
         <div class="container">
         <div class="copyright">
-            &copy; Copyright <strong>INTER-LIBRARY LOAN</strong>. All Rights Reserved
+            &copy; Copyright <strong>ITS-LELANG</strong>. All Rights Reserved
         </div>
         
         </div>
