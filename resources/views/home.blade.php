@@ -8,6 +8,15 @@
   <section id="intro">
 
     <div class="intro-content">
+      @auth
+        @if(Auth::user()->email_verified_at=="")
+          <div class="card">
+            <div class="card-body">
+              <h6>Please verify your email address. If you did not recieve the email, <a href="{{ route('verification.resend') }}">{{ __('click here to request another') }}</a></h6>
+            </div>
+          </div>
+        @endif
+      @endauth
       <h2>Kamu butuh <span>buku?</span><br><span>Cari</span> sekarang juga!</h2>
       <div class="container" >
           <form action="" method="post" role="form" class="contactForm">
