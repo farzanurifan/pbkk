@@ -319,7 +319,6 @@ h1, h2, h3, h4, h5, h6 {
 
 #intro .intro-content h2 span {
   color: #00a9ff;
-  text-decoration: underline;
 }
 
 @media (max-width: 767px) {
