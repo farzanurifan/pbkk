@@ -1,0 +1,500 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"align",
+				"align-content\tproperty"
+			],
+			[
+				"ti",
+				"tiff"
+			],
+			[
+				"gif",
+				"gif"
+			],
+			[
+				"text",
+				"text"
+			],
+			[
+				"ev",
+				"jsEvent"
+			],
+			[
+				"even",
+				"events"
+			],
+			[
+				"ca",
+				"callback"
+			],
+			[
+				"sub",
+				"submitForm"
+			],
+			[
+				"in",
+				"input\tTag"
+			],
+			[
+				"modal",
+				"modal-dialog"
+			],
+			[
+				"form",
+				"form-group"
+			],
+			[
+				"Name",
+				"Name"
+			],
+			[
+				"left",
+				"left"
+			],
+			[
+				"sty",
+				"style"
+			],
+			[
+				"col",
+				"resourceColumns"
+			],
+			[
+				"colo",
+				"background-color"
+			],
+			[
+				"CO",
+				"textColor"
+			],
+			[
+				"i",
+				"initial\tposition"
+			],
+			[
+				"n",
+				"n"
+			],
+			[
+				"eve",
+				"events"
+			],
+			[
+				"event",
+				"eventObj"
+			],
+			[
+				"tex",
+				"labelText"
+			],
+			[
+				"RI",
+				"RIG"
+			],
+			[
+				"re",
+				"resources"
+			],
+			[
+				"h",
+				"h2\tTag"
+			],
+			[
+				"t",
+				"time"
+			],
+			[
+				"a",
+				"auto"
+			],
+			[
+				"wi",
+				"max-width"
+			],
+			[
+				"te",
+				"textColor"
+			],
+			[
+				"E",
+				"e"
+			],
+			[
+				"to",
+				"timeout\tsetTimeout function"
+			],
+			[
+				"b",
+				"b"
+			],
+			[
+				"m",
+				"m"
+			],
+			[
+				"d",
+				"d"
+			],
+			[
+				"al",
+				"text-align\tproperty"
+			],
+			[
+				"years",
+				"years"
+			],
+			[
+				"Event",
+				"eventColor"
+			],
+			[
+				"j",
+				"j"
+			],
+			[
+				"inlin",
+				"inline-flex\tdisplay"
+			],
+			[
+				"req",
+				"Request"
+			],
+			[
+				"mi",
+				"middleware"
+			],
+			[
+				"H",
+				"HomeController"
+			],
+			[
+				"rout",
+				"Route"
+			],
+			[
+				"sekar",
+				"Sekar"
+			],
+			[
+				"hom",
+				"home"
+			],
+			[
+				"fu",
+				"fun\tfunction …"
+			],
+			[
+				"marg",
+				"margin-right"
+			],
+			[
+				"for",
+				"form-control"
+			],
+			[
+				"kost",
+				"kost5"
+			],
+			[
+				"l",
+				"li\tTag"
+			],
+			[
+				"c",
+				"c"
+			],
+			[
+				"max",
+				"max-height"
+			],
+			[
+				"text-a",
+				"text-align"
+			],
+			[
+				"index",
+				"index"
+			],
+			[
+				"with",
+				"withErrors"
+			],
+			[
+				"ba",
+				"background-color"
+			],
+			[
+				"num",
+				"numCorrect"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"php",
+				"PHP CodeBeautifier"
+			],
+			[
+				"package",
+				"Package Control: Install Package"
+			],
+			[
+				"JAVA",
+				"Javascript Beautify"
+			],
+			[
+				"PACKA",
+				"Package Control: Install Package"
+			],
+			[
+				"HTML",
+				"HTMLBeautify"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/xampp/htdocs/akademik/resources/views/edit.blade.php",
+		"/C/xampp/htdocs/CONVERTER/multimedia-net-course/imgcon/ak_php_img_lib_1.05.php",
+		"/C/xampp/htdocs/CONVERTER/multimedia-net-course/imgcon/alltotiff.php",
+		"/C/xampp/htdocs/CONVERTER/multimedia-net-course/imgcon/image_upload_script5.php",
+		"/C/xampp/htdocs/CONVERTER/ak_php_img_lib_1.02.php",
+		"/C/xampp/htdocs/CONVERTER/my_file2.php",
+		"/C/xampp/htdocs/CONVERTER/image_upload_script2.php",
+		"/C/xampp/htdocs/fullcalendar-scheduler-1.9.4/calendar/backend.js",
+		"/C/xampp/htdocs/fullcalendar-scheduler-1.9.4/scheduler2.min.css",
+		"/C/xampp/htdocs/fullcalendar-scheduler-1.9.4/calendar/scheduler.js",
+		"/C/xampp/htdocs/fullcalendar-scheduler-1.9.4/calendar/frontend.js",
+		"/C/xampp/htdocs/fullcalendar-scheduler-1.9.4/lib/bootstrapcdn.css",
+		"/C/xampp/htdocs/fullcalendar-scheduler-1.9.4/lib/bootstrapcdn.js",
+		"/C/xampp/htdocs/fullcalendar-scheduler-1.9.4/lib/bootjquery.js",
+		"/C/xampp/htdocs/fullcalendar-scheduler-1.9.4/lib/jquery.js",
+		"/C/xampp/htdocs/fullcalendar-scheduler-1.9.4/lib/bootstrap.css",
+		"/C/xampp/htdocs/fullcalendar-scheduler-1.9.4/lib/bootstrap.min.js",
+		"/C/xampp/htdocs/fullcalendar-scheduler-1.9.4/demos/bar-coba.html",
+		"/C/xampp/htdocs/fullcalendar-scheduler-1.9.4/demos/1.js",
+		"/C/xampp/htdocs/fullcalendar-scheduler-1.9.4/demos/window.onload = function() {.js",
+		"/C/xampp/htdocs/fullcalendar-scheduler-1.9.4/demos/scale.html",
+		"/C/xampp/htdocs/fullcalendar-scheduler-1.9.4/demos/column-grouping.html",
+		"/C/xampp/htdocs/fullcalendar-scheduler-1.9.4/lib/fullcalendar.print.min.css",
+		"/C/xampp/htdocs/fullcalendar-scheduler-1.9.4/lib/fullcalendar.min.css",
+		"/C/xampp/htdocs/fullcalendar-scheduler-1.9.4/demos/misc-callbacks.html",
+		"/C/xampp/htdocs/fp-rk-ill/rule/rulebio.html",
+		"/C/xampp/htdocs/fp-rk-ill/list/css.css",
+		"/C/xampp/htdocs/fp-rk-ill/dikembalikan.html",
+		"/C/xampp/htdocs/fp-rk-ill/rule/rulekimia.html",
+		"/C/xampp/htdocs/fp-rk-ill/rule/rulefisika.html",
+		"/C/xampp/htdocs/fp-rk-ill/rule/rulemtk.html",
+		"/C/xampp/htdocs/fp-rk-ill/rule/rulemamet.html",
+		"/C/xampp/htdocs/fp-rk-ill/rule/ruletc.html",
+		"/C/xampp/htdocs/fp-rk-ill/rule/rulearsi.html",
+		"/C/xampp/htdocs/fp-rk-ill/rule/ruledesain.html",
+		"/D/ftprsa/FTP/Tugas1/client/client.py",
+		"/C/xampp/htdocs/i-Kost/editprofile.html",
+		"/C/xampp/htdocs/proyek-RK/index.html",
+		"/C/xampp/htdocs/proyek-RK/welcome.html",
+		"/C/xampp/htdocs/i-Kost/css/style.css",
+		"/C/xampp/htdocs/i-Kost/tambahkos.html",
+		"/C/xampp/htdocs/i-Kost/daftarkosku.html",
+		"/C/xampp/htdocs/i-Kost/loginfix/verifikasi.html",
+		"/C/xampp/htdocs/i-Kost/loginfix/signup.html",
+		"/C/xampp/htdocs/i-Kost/js/graph.js",
+		"/C/xampp/htdocs/i-Kost/index.html",
+		"/C/xampp/htdocs/i-Kost/loginfix/login.html",
+		"/C/xampp/htdocs/i-Kost/welcome.html",
+		"/C/xampp/htdocs/i-Kost/daftarkosku.php",
+		"/C/xampp/htdocs/i-Kost/TambahKost.php",
+		"/C/xampp/htdocs/i-Kost/welcome.php",
+		"/C/xampp/htdocs/i-Kost/css/kosku.css",
+		"/C/xampp/htdocs/i-Kost/css/graph.css",
+		"/C/xampp/htdocs/i-Kost/css/graph.js",
+		"/D/FEISTEL TUGAS 3/feistel.py",
+		"/C/Users/dicky/Desktop/diabetes-prediction-master/diabetes-prediction-master/pima-indians-diabetes.data",
+		"/D/kuliah web/FP/onepage/file/footer.php",
+		"/D/kuliah web/FP/onepage/file/mysqli_connect.php",
+		"/D/kuliah web/FP/onepage/file/p_registrasi.php",
+		"/D/kuliah web/FP/onepage/file/p_login.php",
+		"/D/kuliah web/FP/onepage/file/nav_login2.php",
+		"/D/kuliah web/FP/onepage/New folder/login.php",
+		"/C/Users/dicky/Documents/index.html",
+		"/C/Users/dicky/Pictures/greetings card/keutamaan-bulan-ramadhan-gambar-kaligrafi-ramadhan.png",
+		"/C/Users/dicky/Downloads/_conn.php",
+		"/D/kuliah web/PWEB pak imam/jsquiz.js",
+		"/D/kuliah web/PWEB pak imam/quiz.js",
+		"/D/kuliah web/PWEB pak imam/quiz.html",
+		"/C/Users/dicky/Documents/yuhu.html",
+		"/C/Users/dicky/Documents/hall.html",
+		"/C/Users/dicky/Documents/link.html",
+		"/C/Users/dicky/Documents/more.html",
+		"/C/Users/dicky/Documents/w3.css",
+		"/C/Users/dicky/Documents/New folder/jsquiz.js",
+		"/C/Users/dicky/Documents/New folder/quiz.css",
+		"/C/Users/dicky/Documents/New folder/quiz.html"
+	],
+	"find":
+	{
+		"height": 28.0
+	},
+	"find_in_files":
+	{
+		"height": 111.2,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": false
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 28.0
+	},
+	"input":
+	{
+		"height": 84.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "home.blade.sublime-project",
+	"replace":
+	{
+		"height": 52.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"we",
+				"routes\\web.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 237.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

@@ -1,0 +1,7 @@
+buat dua akun
+
+akun member peminjam hanya bisa mencari dan melihat buku tidak bisa chat ke rb
+
+buat halaman daftar pinjaman buku untuk bisa mengembalikan buku
+
+suruh lainnya buat halaman daftar pinjaman buku, di counter.html diberi 2 button buat back dan request perpanjangan pinjaman
