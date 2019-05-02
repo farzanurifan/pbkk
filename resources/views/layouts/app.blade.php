@@ -10,10 +10,6 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     
-    <!-- Favicons -->
-    <link href="templates/img/info.png" rel="icon">
-    <link href="templates/img/apple-touch-icon.png" rel="apple-touch-icon">
-
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800|Montserrat:300,400,700" rel="stylesheet">
 
@@ -47,7 +43,7 @@
     <header id="header" >
         <div class="container">
             <div id="logo" class="pull-left">
-                <h1><a href="#body" class="scrollto">ITS-<span>LELANG</span></a></h1>
+                <h1><a href="#body" class="scrollto"><img src="img/icon.png">ITS-<span>LELANG</span></a></h1>
                 <!-- Uncomment below if you prefer to use an image logo -->
                 <!-- <a href="#body"><img src="img/logo.png" alt="" title="" /></a>-->
             </div>
