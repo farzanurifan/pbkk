@@ -21,7 +21,7 @@
       <div class="container" >
           <form action="" method="post" role="form" class="contactForm">
             <div class="form-row">
-              <div class="form-group col-md-10" style="padding-left: 185px">
+              <div class="form-group col-md-12" >
                 <input style="text-align: center; height: 50px; font-size: 20px"  type="text" name="name" class="form-control" id="name" placeholder="Masukkan nama barang yang anda cari" data-rule="minlen:1" data-msg="Please enter the address" list="wilayah" />
                   <datalist id="wilayah">
                     <option>Laptop</option>
