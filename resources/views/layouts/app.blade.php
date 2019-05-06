@@ -27,6 +27,8 @@
     <!-- Main Stylesheet File -->
     <link href="templates/css/style.css" rel="stylesheet">
 
+
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <!-- =======================================================
         Theme Name: Reveal
         Theme URL: https://bootstrapmade.com/reveal-bootstrap-corporate-template/
@@ -65,6 +67,10 @@
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('profile') }}">
+                                    {{ __('Profile') }}
+                                </a>
+
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
                                                 document.getElementById('logout-form').submit();">
