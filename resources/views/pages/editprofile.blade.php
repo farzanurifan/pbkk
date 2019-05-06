@@ -2,8 +2,6 @@
 
 @section('content')
 
-
-
 <body style="background-color: #f2f2f2">
 
   <div class="container" style=" width: 650px; height: 50%; margin-top: 50px; font-family: Raleway; border-color: #50d8af; border-width: 2px; background-color: #fff; border-radius: 15px">
@@ -31,14 +29,15 @@
         <h1 style="font-size: 16px; margin-top: -20px">
           <a href="../daftarkosku.html">Beranda </a>
           <i class="fa fa-angle-double-right"></i>
-          <a style="color: #50d8af;" href="editprofile">Profil Akun</a>
+          <a href="profilakun.html">Profil Akun </a>
+          <i class="fa fa-angle-double-right"></i>
+          <a style="color: #50d8af;" href="#">Sunting Akun</a>
         </h1>
 
 
       
         <!-- <a href="../beranda.html"><i class="fa fa-home" style="font-size:35px;"></i></a> -->
-        <span style="margin-left: 200px;"><b>Profil Akun </span></b></span>
-        <a href="editprofile.html"><i class="fa fa-pencil-square-o" style="font-size:30px;"></i></a>
+        <span style="margin-left: 180px;"><b>Sunting Akun </span></b></span>
         
       </legend>
       <!-- <span class="login100-form-title" ><b>Sign Up</b></span>
@@ -227,7 +226,7 @@
             </label>
                 <div class="col-md-6  inputGroupContainer">
                 <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-            <input class="form-control" id="userPw" type="password" value="**********" placeholder="Kata Sandi yang udah diisi pas sign up" 
+            <input class="form-control" id="userPw" type="password" value="*********" placeholder="Kata Sandi yang udah diisi pas sign up" 
                        name="password" data-minLength="5"
                        data-error="some error"
                        required/>
@@ -236,7 +235,6 @@
                 </div>
              </div>
         </div>
-        <br>
      
         <!-- <div class="form-group has-feedback">
             <label for="confirmPassword"  class="col-md-4 control-label">
@@ -256,12 +254,12 @@
      
   
       <!-- Button -->
-      <!-- <div class="form-group">
+      <div class="form-group">
         <label class="col-md-4 control-label"></label>
         <div class="col-md-7">
           <button type="submit" class="btn-get-started" style="margin-left: 115px">Submit</button>
         </div>
-      </div> -->
+      </div>
 
       <!-- <div style="text-align: center; ">
         <legend style="font-size: 14px; padding-bottom: 10px; margin-top: -15px">Sudah punya akun pemilik kos? <a href="login.html" class="" ><b>Masuk sekarang</b></a></legend>
