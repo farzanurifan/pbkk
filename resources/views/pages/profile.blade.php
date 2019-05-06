@@ -31,14 +31,14 @@
         <h1 style="font-size: 16px; margin-top: -20px">
           <a href="../daftarkosku.html">Beranda </a>
           <i class="fa fa-angle-double-right"></i>
-          <a style="color: #50d8af;" href="editprofile">Profil Akun</a>
+          <a style="color: #50d8af;" href="#">Profil Akun</a>
         </h1>
 
 
       
         <!-- <a href="../beranda.html"><i class="fa fa-home" style="font-size:35px;"></i></a> -->
         <span style="margin-left: 200px;"><b>Profil Akun </span></b></span>
-        <a href="editprofile.html"><i class="fa fa-pencil-square-o" style="font-size:30px;"></i></a>
+        <a href="/editprofile"><i class="fa fa-pencil-square-o" style="font-size:30px;"></i></a>
         
       </legend>
       <!-- <span class="login100-form-title" ><b>Sign Up</b></span>
