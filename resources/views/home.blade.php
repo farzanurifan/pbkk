@@ -5,7 +5,7 @@
   <!--==========================
     Intro Section
   ============================-->
-  <section id="intro">
+  <section id="intro" >
 
     <div class="intro-content">
       @auth
@@ -65,6 +65,9 @@
     ============================-->
      <section id="portfolio" class="wow fadeInUp">
       <div class="container">
+        <div class="section-header" >
+          <h2 style="text-align: center;"><img src="img/category.jpg" alt="">KATEGORI BARANG</h2>
+        </div>
       </div>
       <div class="container-fluid">
         <div class="row no-gutters">
@@ -174,10 +177,10 @@
     <!--==========================
       Rekomendasi Barang Section
     ============================-->
-    <section id="portfolio" class="wow fadeInUp">
+    <section id="portfolio" class="wow fadeInUp"style="background-color:#EEEEEE">
       <div class="container">
         <div class="section-header">
-          <h2 style="text-align: center;">REKOMENDASI BARANG<img src="img/kategori.png" alt=""></h2>
+          <h2 style="text-align: center;">REKOMENDASI BARANG</h2>
         </div>
       </div>
 
