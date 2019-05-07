@@ -37,13 +37,17 @@
             
             <div>
             <!-- <a href="#" class="btn-projects scrollto">Get Started</a> -->
-              <a href="hasilcariberanda.html" class="btn-get-started scrollto">Cari</a>
+              <a href="#" class="btn-get-started scrollto">Pelelang</a>
+              <a href="#" class="btn-get-started scrollto">Pembeli</a>
+
               <!-- <a href="result_search.hmtl">
               <button class="btn-get-started" type="submit" style="font-size: 18px">Cari</button>
               </a> -->
             </div>
+
             <!-- <div class="text-center"><button type="submit">Send Message</button></div> -->
           </form>
+
         </div>
     </div>
 

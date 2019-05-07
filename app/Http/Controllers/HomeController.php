@@ -41,4 +41,9 @@ class HomeController extends Controller
     {
         return view('pages.editprofile');
     }
+
+     public function filterbarang()
+    {
+        return view('pages.filterbarang');
+    }
 }

@@ -21,6 +21,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/kategori/dummy', 'HomeController@kategori')->name('kategori');
 Route::get('/profile', 'HomeController@profile')->name('profile');
 Route::get('/editprofile', 'HomeController@editprofile')->name('editprofile');
+Route::get('/filterbarang', 'HomeController@filterbarang')->name('filterbarang');
 
 Route::middleware(['auth','verified'])->group(function(){
 
