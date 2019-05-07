@@ -74,7 +74,7 @@
 
           <div class="col-lg-2 col-md-2" style="padding: 10px">
             <div class="portfolio-item wow fadeInUp">
-              <a href="hasilcariberanda.html" class="" >
+              <a href="/kategori/dummy" class="" >
                 <img src="img/bb.jpg" alt="">
                 <div class="portfolio-overlay">
                   <div class="portfolio-info"><h2 class="wow fadeInUp"></h2></div>
@@ -90,7 +90,7 @@
 
           <div class="col-lg-2 col-md-2" style="padding: 10px">
             <div class="portfolio-item wow fadeInUp">
-              <a href="hasilcariberanda.html" class="" >
+              <a href="/kategori/dummy" class="" >
                 <img src="img/cc.jpg" alt="">
                 <div class="portfolio-overlay">
                   <div class="portfolio-info"><h2 class="wow fadeInUp"></h2></div>
@@ -106,7 +106,7 @@
 
           <div class="col-lg-2 col-md-2" style="padding: 10px">
             <div class="portfolio-item wow fadeInUp">
-              <a href="hasilcariberanda.html" class="" >
+              <a href="/kategori/dummy" class="" >
                 <img src="img/dd.jpg" alt="">
                 <div class="portfolio-overlay">
                   <div class="portfolio-info"><h2 class="wow fadeInUp"></h2></div>
@@ -122,7 +122,7 @@
 
           <div class="col-lg-2 col-md-2" style="padding: 10px">
             <div class="portfolio-item wow fadeInUp">
-              <a href="hasilcariberanda.html" class="" >
+              <a href="/kategori/dummy" class="" >
                 <img src="img/ee.jpg" alt="">
                 <div class="portfolio-overlay">
                   <div class="portfolio-info"><h2 class="wow fadeInUp"></h2></div>
@@ -138,7 +138,7 @@
 
           <div class="col-lg-2 col-md-2" style="padding: 10px">
             <div class="portfolio-item wow fadeInUp">
-              <a href="hasilcariberanda.html" class="" >
+              <a href="/kategori/dummy" class="" >
                 <img src="img/ff.jpg" alt="">
                 <div class="portfolio-overlay">
                   <div class="portfolio-info"><h2 class="wow fadeInUp"></h2></div>
@@ -154,7 +154,7 @@
 
           <div class="col-lg-2 col-md-2" style="padding: 10px">
             <div class="portfolio-item wow fadeInUp">
-              <a href="hasilcariberanda.html" class="" >
+              <a href="/kategori/dummy" class="" >
                 <img src="img/ii.jpg" alt="">
                 <div class="portfolio-overlay">
                   <div class="portfolio-info"><h2 class="wow fadeInUp"></h2></div>

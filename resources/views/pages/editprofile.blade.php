@@ -1,4 +1,4 @@
-@extends('layouts.app2')
+@extends('layouts.app')
 
 @section('content')
 
@@ -26,13 +26,13 @@
       
       <!-- Form Name -->
       <legend style="font-size: 35px; text-align: left;" >
-        <h1 style="font-size: 16px; margin-top: -20px">
+        {{-- <h1 style="font-size: 16px; margin-top: -20px">
           <a href="../daftarkosku.html">Beranda </a>
           <i class="fa fa-angle-double-right"></i>
           <a href="profilakun.html">Profil Akun </a>
           <i class="fa fa-angle-double-right"></i>
           <a style="color: #50d8af;" href="#">Sunting Akun</a>
-        </h1>
+        </h1> --}}
 
 
       
@@ -458,5 +458,4 @@
  
  </script>
 </body>
-</html>
 @endsection

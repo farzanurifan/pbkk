@@ -1,4 +1,4 @@
-@extends('layouts.app2')
+@extends('layouts.app')
 
 @section('content')
 
@@ -28,11 +28,11 @@
       
       <!-- Form Name -->
       <legend style="font-size: 35px; text-align: left;" >
-        <h1 style="font-size: 16px; margin-top: -20px">
+        {{-- <h1 style="font-size: 16px; margin-top: -20px">
           <a href="../daftarkosku.html">Beranda </a>
           <i class="fa fa-angle-double-right"></i>
           <a style="color: #50d8af;" href="#">Profil Akun</a>
-        </h1>
+        </h1> --}}
 
 
       
@@ -50,7 +50,7 @@
         <label class="col-md-4 control-label">Nama Lengkap</label>
         <div class="col-md-6  inputGroupContainer">
           <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-            <input  name="first_name" value="Dicky" placeholder="Nama yang udah diisi pas sign up" class="form-control"  type="text">
+            <input disabled name="first_name" value="Dicky" placeholder="Nama yang udah diisi pas sign up" class="form-control"  type="text">
           </div>
         </div>
       </div>
@@ -84,7 +84,7 @@
         <label class="col-md-4 control-label">Alamat</label>
         <div class="col-md-6  inputGroupContainer">
           <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-            <input name="address" value="Keputih Gang 1D No. 25" placeholder="Alamat yang udah diisi pas sign up" class="form-control" type="text">
+            <input disabled name="address" value="Keputih Gang 1D No. 25" placeholder="Alamat yang udah diisi pas sign up" class="form-control" type="text">
           </div>
         </div>
       </div>
@@ -95,7 +95,7 @@
         <label class="col-md-4 control-label">Nomor Telepon</label>
         <div class="col-md-6  inputGroupContainer">
           <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-            <input name="phone" value="031 423453" placeholder="Nomor telepon yang udah diisi pas sign up" class="form-control" type="text">
+            <input disabled name="phone" value="031 423453" placeholder="Nomor telepon yang udah diisi pas sign up" class="form-control" type="text">
           </div>
         </div>
       </div>
@@ -206,7 +206,7 @@
         <label class="col-md-4 control-label">E-Mail</label>
         <div class="col-md-6  inputGroupContainer">
           <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-            <input name="email" value="dicky@gmail.com" placeholder="Alamat E-Mail yang udah diisi pas sign up" class="form-control"  type="text">
+            <input name="email" value="dicky@gmail.com" placeholder="Alamat E-Mail yang udah diisi pas sign up" class="form-control"  type="text" disabled>
           </div>
         </div>
       </div>
@@ -215,7 +215,7 @@
         <label class="col-md-4 control-label">Nama Pengguna</label>
         <div class="col-md-6  inputGroupContainer">
           <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-            <input  name="last_name" value="momogi" placeholder="Nama Pengguna yang udah diisi pas sign up" class="form-control"  type="text">
+            <input  name="last_name" value="momogi" placeholder="Nama Pengguna yang udah diisi pas sign up" class="form-control"  type="text" disabled>
           </div>
         </div>
       </div>
@@ -230,7 +230,7 @@
             <input class="form-control" id="userPw" type="password" value="**********" placeholder="Kata Sandi yang udah diisi pas sign up" 
                        name="password" data-minLength="5"
                        data-error="some error"
-                       required/>
+                       required disabled/>
                 <span class="glyphicon form-control-feedback"></span>
                 <span class="help-block with-errors"></span>
                 </div>
@@ -460,5 +460,4 @@
  
  </script>
 </body>
-</html>
 @endsection
