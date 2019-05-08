@@ -2,6 +2,8 @@
 
 @section('content')
 
+
+
 <body style="background-color: #f2f2f2">
 
   <div class="container" style=" width: 650px; height: 50%; margin-top: 50px; font-family: Raleway; border-color: #50d8af; border-width: 2px; background-color: #fff; border-radius: 15px">
@@ -21,7 +23,7 @@
   <br>
 
   <div class="">
-  <form class="form-horizontal" action="profilakun.html" method="post"  id="reg_form">
+  
     <fieldset>
       
       <!-- Form Name -->
@@ -29,27 +31,26 @@
         {{-- <h1 style="font-size: 16px; margin-top: -20px">
           <a href="../daftarkosku.html">Beranda </a>
           <i class="fa fa-angle-double-right"></i>
-          <a href="profilakun.html">Profil Akun </a>
-          <i class="fa fa-angle-double-right"></i>
-          <a style="color: #50d8af;" href="#">Sunting Akun</a>
+          <a style="color: #50d8af;" href="#">Profil Akun</a>
         </h1> --}}
 
 
       
         <!-- <a href="../beranda.html"><i class="fa fa-home" style="font-size:35px;"></i></a> -->
-        <span style="margin-left: 180px;"><b>Sunting Akun </span></b></span>
+        <span style="margin-left: 200px;"><b>Profil Akun</span></b></span>
+        <a id="profile_edit"><i class="fa fa-pencil-square-o" style="font-size:30px;"></i></a>
         
       </legend>
       <!-- <span class="login100-form-title" ><b>Sign Up</b></span>
       <hr> -->
     </fieldset>
       <!-- Text input-->
-    <fieldset > 
+    <fieldset> 
       <div class="form-group">
         <label class="col-md-4 control-label">Nama Lengkap</label>
         <div class="col-md-6  inputGroupContainer">
           <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-            <input  name="first_name" value="Dicky" placeholder="Nama yang udah diisi pas sign up" class="form-control"  type="text">
+            <input disabled name="first_name" id="profile_name" value="{{Auth::user()->name}}" placeholder="Nama yang udah diisi pas sign up" class="form-control"  type="text">
           </div>
         </div>
       </div>
@@ -83,18 +84,18 @@
         <label class="col-md-4 control-label">Alamat</label>
         <div class="col-md-6  inputGroupContainer">
           <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-            <input name="address" value="Keputih Gang 1D No. 25" placeholder="Alamat yang udah diisi pas sign up" class="form-control" type="text">
+            <input disabled name="address" id="profile_alamat" value="{{Auth::user()->alamat}}" placeholder="Alamat yang udah diisi pas sign up" class="form-control" type="text">
           </div>
         </div>
       </div>
       
       <!-- Text input-->
-      
+      <input id="profile_id" value="{{Auth::user()->id}}" hidden>
       <div class="form-group">
         <label class="col-md-4 control-label">Nomor Telepon</label>
         <div class="col-md-6  inputGroupContainer">
           <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-            <input name="phone" value="031 423453" placeholder="Nomor telepon yang udah diisi pas sign up" class="form-control" type="text">
+            <input disabled name="phone" id="profile_telepon" value="{{Auth::user()->telepon}}" placeholder="Nomor telepon yang udah diisi pas sign up" class="form-control" type="text">
           </div>
         </div>
       </div>
@@ -205,37 +206,16 @@
         <label class="col-md-4 control-label">E-Mail</label>
         <div class="col-md-6  inputGroupContainer">
           <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-            <input name="email" value="dicky@gmail.com" placeholder="Alamat E-Mail yang udah diisi pas sign up" class="form-control"  type="text">
-          </div>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label class="col-md-4 control-label">Nama Pengguna</label>
-        <div class="col-md-6  inputGroupContainer">
-          <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-            <input  name="last_name" value="momogi" placeholder="Nama Pengguna yang udah diisi pas sign up" class="form-control"  type="text">
+            <input name="email" value="{{Auth::user()->email}}" placeholder="Alamat E-Mail yang udah diisi pas sign up" class="form-control"  type="text" disabled>
           </div>
         </div>
       </div>
       
-    
-        <div class="form-group has-feedback">
-            <label for="password"  class="col-md-4 control-label">
-              Kata Sandi
-            </label>
-                <div class="col-md-6  inputGroupContainer">
-                <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-            <input class="form-control" id="userPw" type="password" value="*********" placeholder="Kata Sandi yang udah diisi pas sign up" 
-                       name="password" data-minLength="5"
-                       data-error="some error"
-                       required/>
-                <span class="glyphicon form-control-feedback"></span>
-                <span class="help-block with-errors"></span>
-                </div>
-             </div>
-        </div>
-     
+        
+    <button id="profile_submit" class="btn btn-success" style="display: none">Submit</button>
+    <button id="profile_cancel" class="btn btn-danger" style="display: none">Cancel</button>
+    <p id="profile_response_msg" style="display: none"></p>
+    <br><br>
         <!-- <div class="form-group has-feedback">
             <label for="confirmPassword"  class="col-md-4 control-label">
                    Confirm Password
@@ -254,18 +234,18 @@
      
   
       <!-- Button -->
-      <div class="form-group">
+      <!-- <div class="form-group">
         <label class="col-md-4 control-label"></label>
         <div class="col-md-7">
           <button type="submit" class="btn-get-started" style="margin-left: 115px">Submit</button>
         </div>
-      </div>
+      </div> -->
 
       <!-- <div style="text-align: center; ">
         <legend style="font-size: 14px; padding-bottom: 10px; margin-top: -15px">Sudah punya akun pemilik kos? <a href="login.html" class="" ><b>Masuk sekarang</b></a></legend>
       </div> -->
     </fieldset>
-  </form>
+
   </div>
 </div>
 

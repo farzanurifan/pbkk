@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
+use Response;
 
 class HomeController extends Controller
 {
@@ -34,11 +36,22 @@ class HomeController extends Controller
 
     public function profile()
     {
-        return view('pages.profile');
+        return view('pages.profile.index');
     }
 
-    public function editprofile()
+    public function store(Request $req)
     {
-        return view('pages.editprofile');
+        User::where('id',$req->id)->update([
+            'name' => $req->name,
+            'alamat' => $req->alamat,
+            'telepon' => $req->telepon
+        ]);
+
+        $user = User::where('id',$req->id)->first();
+
+        return Response::json([
+            'response' => "Data berhasil disimpan",
+            'data' => $user
+        ]);
     }
 }

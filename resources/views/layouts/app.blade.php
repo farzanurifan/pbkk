@@ -45,7 +45,11 @@
     <header id="header" >
         <div class="container">
             <div id="logo" class="pull-left">
-                <h1><a href="/" class="scrollto"><img src={{asset("img/icon.png")}}>ITS-<span>LELANG</span></a></h1>
+                @auth
+                    <h1><a href="{{route('home')}}" class="scrollto"><img src={{asset("img/icon.png")}}>ITS-<span>LELANG</span></a></h1>
+                @else
+                    <h1><a href="{{route('landing')}}" class="scrollto"><img src={{asset("img/icon.png")}}>ITS-<span>LELANG</span></a></h1>
+                @endif
                 <!-- Uncomment below if you prefer to use an image logo -->
                 <!-- <a href="#body"><img src="img/logo.png" alt="" title="" /></a>-->
             </div>
@@ -61,13 +65,20 @@
                             </li>
                         @endif
                     @else
+                        <li class="nav-item"> 
+                            <a class="nav-link" href="{{ route('make') }}">{{ __('Lelang Barang') }}</a>
+                        </li>
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }} <span class="caret"></span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('profile') }}">
-                                    {{ __('Profile') }}
+                                    {{ __('Kelola Akun') }}
+                                </a>
+                                <br>
+                                <a class="dropdown-item" href="{{ route('barangs') }}">
+                                    {{ __('Kelola Barang') }}
                                 </a>
                                 <br>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
@@ -80,6 +91,7 @@
                                 </form>
                             </div>
                         </li>
+                        
                         {{-- <li class="menu-active"><a href="#body">Beranda</a></li>
                         <li class="menu-has-children"><a href="#">Mahasiswa</a>
                             <ul>
@@ -130,6 +142,6 @@
     <!-- Template Main Javascript File -->
     <script src={{asset("templates/js/main.js")}}></script>
     <script src={{asset("https://code.jquery.com/jquery-3.4.1.js")}} integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-
+    @include('scripts.script')
     </body>
 </html>

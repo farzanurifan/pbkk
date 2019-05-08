@@ -13,10 +13,13 @@ class CreateBarangsTable extends Migration
      */
     public function up()
     {
-        Schema::create('barang', function (Blueprint $table) {
+        Schema::create('barangs', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->bigInteger('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
             $table->string('nama_barang');
             $table->integer('harga_awal');
+            $table->string('path')->nullable();
             $table->timestamps();
         });
     }

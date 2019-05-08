@@ -13,15 +13,21 @@
 
 Route::get('/', function () {
     return view('home');
-});
+})->name('landing');
 
 Auth::routes(['verify' => true]);
 
-Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/kategori/dummy', 'HomeController@kategori')->name('kategori');
-Route::get('/profile', 'HomeController@profile')->name('profile');
-Route::get('/editprofile', 'HomeController@editprofile')->name('editprofile');
+Route::get('/barang/{id}','BarangController@detail');
+Route::post('/search','BarangController@search')->name('searchItem');
+
+Route::middleware(['auth'])->group(function(){
+	Route::get('/home', 'BarangController@index')->name('home');
+});
 
 Route::middleware(['auth','verified'])->group(function(){
-
+	Route::get('/profile', 'HomeController@profile')->name('profile');
+	Route::get('/barang','BarangController@index')->name('barangs');
+	Route::post('/editprofile', 'HomeController@store');
+	Route::get('/make','BarangController@make')->name('make');
 });

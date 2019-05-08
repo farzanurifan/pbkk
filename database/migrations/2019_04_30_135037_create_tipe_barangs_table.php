@@ -13,7 +13,7 @@ class CreateTipeBarangsTable extends Migration
      */
     public function up()
     {
-        Schema::create('tipe_barang', function (Blueprint $table) {
+        Schema::create('tipe_barangs', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('tipe_barang');
             $table->timestamps();

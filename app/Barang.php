@@ -6,18 +6,20 @@ use Illuminate\Database\Eloquent\Model;
 
 class Barang extends Model
 {
-    protected $primaryKey = 'id';
-	public $incrementing = false;
-
 	protected $fillable = [
-	'nama_barang','harga_awal'
-];
+	 'nama_barang','harga_awal','path','user_id'
+  ];
 
 	public function TipeBarang(){
-    	return $this->hasMany('App\TipeBarang','id','id');
+    	return $this->hasMany('App\TipeBarang');
    	}
 
-   	public fuction Lelang(){
-   		return $this->belongsTo('App\Lelang','id','id')
+   	public function Lelang(){
+   		return $this->hasOne('App\Lelang');
    	}
+
+    public function User()
+    {
+      return $this->belongsTo('App\User');
+    }
 }

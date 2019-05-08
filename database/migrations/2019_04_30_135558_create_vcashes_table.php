@@ -13,7 +13,7 @@ class CreateVcashesTable extends Migration
      */
     public function up()
     {
-        Schema::create('vcashe', function (Blueprint $table) {
+        Schema::create('vcashs', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('nominal');
             $table->string('status');

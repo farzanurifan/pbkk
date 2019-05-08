@@ -2,84 +2,35 @@
 
 namespace App\Http\Controllers;
 
-use App\detailBarang;
 use Illuminate\Http\Request;
+use App\Barang;
+use DB;
+use Auth;
 
-class DetailBarangController extends Controller
+class BarangController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function make()
+    {
+    	return view('pages.barang.make');
+    }
+
     public function index()
     {
-        return view('Barang');
+    	$barangs = Barang::where('user_id',Auth::user()->id)->orderBy('created_at','desc')->get();
+    	return view('home',compact('barangs'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function search(Request $req)
     {
-        //
+    	$barangs = Barang::where('nama_barang','like',"%".$req->searchbar."%")->orderBy('created_at','desc')->get();
+    	$title = $req->searchbar;
+    	$count = count($barangs);
+    	
+    	return view('pages.barang.searchRes',compact('barangs','title','count'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function store(Request $req)
     {
-        //
-    }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\detailBarang  $detailBarang
-     * @return \Illuminate\Http\Response
-     */
-    public function show(detailBarang $detailBarang)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\detailBarang  $detailBarang
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(detailBarang $detailBarang)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\detailBarang  $detailBarang
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, detailBarang $detailBarang)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\detailBarang  $detailBarang
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(detailBarang $detailBarang)
-    {
-        //
     }
 }

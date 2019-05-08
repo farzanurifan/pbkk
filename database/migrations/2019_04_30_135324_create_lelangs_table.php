@@ -13,8 +13,13 @@ class CreateLelangsTable extends Migration
      */
     public function up()
     {
-        Schema::create('lelang', function (Blueprint $table) {
+        Schema::create('lelangs', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->bigInteger('barang_id')->unsigned();
+            $table->foreign('barang_id')->references('id')->on('lelangs');
+            $table->bigInteger('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->integer('penawar_id');
             $table->integer('harga');
             $table->string('status');
             $table->integer('durasi');

@@ -6,19 +6,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Lelang extends Model
 {
-    protected $primaryKey = 'id';
-	public $incrementing = false;
-
 	protected $fillable = [
-	'harga','status','durasi'
+	'harga','status','durasi','barang_id','user_id','penawar_id'
 ];
 
-	public fuction Barang(){
-   		return $this->hasMany('App\Lelang','id','id')
+	public function Barang(){
+   		return $this->belongsTo('App\Lelang');
    	}
 
    	public function User(){
-   		return $this->belongsTo('App\User','id','id')
+   		return $this->belongsTo('App\User');
    	}
 
 }
