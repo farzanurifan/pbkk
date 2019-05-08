@@ -54,4 +54,3 @@ class HomeController extends Controller
             'data' => $user
         ]);
     }
-}

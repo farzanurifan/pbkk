@@ -18,7 +18,41 @@
         @endif
       @endauth
       <h2>Jangan Buang <span>Barangmu !</span><br><span>Lelang </span>segera disini !</h2>
+<<<<<<< HEAD
       @include('pages.barang.search')
+=======
+      <div class="container" >
+          <form action="" method="post" role="form" class="contactForm">
+            <div class="form-row">
+              <div class="form-group col-md-12" >
+                <input style="text-align: center; height: 50px; font-size: 20px"  type="text" name="name" class="form-control" id="name" placeholder="Masukkan nama barang yang anda cari" data-rule="minlen:1" data-msg="Please enter the address" list="wilayah" />
+                  <datalist id="wilayah">
+                    <option>Laptop</option>
+                    <option>Smartphone</option>
+                    <option>Jaket Hoodie</option>
+                    <option>Sepatu</option>
+                    <option>Jam Pria</option>
+                    <option>Jam Wanita</option>
+                    <option>Cermin</option>
+                  </datalist>
+              </div>
+            </div>
+            
+            <div>
+            <!-- <a href="#" class="btn-projects scrollto">Get Started</a> -->
+              <a href="#" class="btn-get-started scrollto">Pelelang</a>
+              <a href="#" class="btn-get-started scrollto">Pembeli</a>
+
+              <!-- <a href="result_search.hmtl">
+              <button class="btn-get-started" type="submit" style="font-size: 18px">Cari</button>
+              </a> -->
+            </div>
+
+            <!-- <div class="text-center"><button type="submit">Send Message</button></div> -->
+          </form>
+
+        </div>
+>>>>>>> master
     </div>
 
     <div id="intro-carousel" class="owl-carousel" style="opacity: 0.8">
