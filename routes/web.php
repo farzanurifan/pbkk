@@ -18,14 +18,9 @@ Route::get('/', function () {
 Auth::routes(['verify' => true]);
 
 Route::get('/kategori/dummy', 'HomeController@kategori')->name('kategori');
-<<<<<<< HEAD
 Route::get('/barang/{id}','BarangController@detail');
 Route::post('/search','BarangController@search')->name('searchItem');
-=======
-Route::get('/profile', 'HomeController@profile')->name('profile');
-Route::get('/editprofile', 'HomeController@editprofile')->name('editprofile');
 Route::get('/filterbarang', 'HomeController@filterbarang')->name('filterbarang');
->>>>>>> master
 
 Route::middleware(['auth'])->group(function(){
 	Route::get('/home', 'BarangController@index')->name('home');
