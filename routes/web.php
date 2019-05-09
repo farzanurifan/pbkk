@@ -37,3 +37,7 @@ Route::middleware(['auth','verified'])->group(function(){
 	Route::get('/make','LelangController@make')->name('make');
 	Route::post('/lelangBuat','LelangController@addLelang')->name('lelang_store');
 });
+
+Route::group(['middleware' => ['admin']], function() {
+
+});

@@ -34,6 +34,6 @@ class CreateLelangsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('lelang');
+        Schema::dropIfExists('lelangs');
     }
 }

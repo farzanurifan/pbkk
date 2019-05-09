@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('alamat');
             $table->string('telepon');
             $table->string('path')->nullable();
+            $table->boolean('is_admin')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
