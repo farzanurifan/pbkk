@@ -77,9 +77,15 @@
                                     {{ __('Kelola Akun') }}
                                 </a>
                                 <br>
-                                <a class="dropdown-item" href="{{ route('barangs') }}">
-                                    {{ __('Kelola Barang') }}
-                                </a>
+                                @if (Auth::user()->is_admin)
+                                    <a class="dropdown-item" href="{{ route('kelola_barang') }}">
+                                        {{ __('Kelola Barang') }}
+                                    </a>                                    
+                                @else
+                                    <a class="dropdown-item" href="{{ route('barangs') }}">
+                                        {{ __('Kelola Barang') }}
+                                    </a>
+                                @endif
                                 <br>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();

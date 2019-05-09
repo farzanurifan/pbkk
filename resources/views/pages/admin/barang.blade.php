@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+    <br>
+    <h1>Admin Page</h1>
+    <br>
     <table class="table table-hover">
         <thead>
             <tr>
