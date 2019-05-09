@@ -6,18 +6,21 @@ use Illuminate\Http\Request;
 use App\Barang;
 use DB;
 use Auth;
+use Image;
+use Response;
 
 class BarangController extends Controller
 {
-    public function make()
-    {
-    	return view('pages.barang.make');
-    }
-
     public function index()
     {
-    	$barangs = Barang::where('user_id',Auth::user()->id)->orderBy('created_at','desc')->get();
-    	return view('home',compact('barangs'));
+    	$barangs = Barang::orderBy('created_at','desc')->get();
+        return view('home',compact('barangs'));
+    }
+
+    public function getAll()
+    {
+        $barangs = Barang::orderBy('created_at','desc')->get();
+        return Response::json($barangs);
     }
 
     public function search(Request $req)
@@ -29,8 +32,50 @@ class BarangController extends Controller
     	return view('pages.barang.searchRes',compact('barangs','title','count'));
     }
 
-    public function store(Request $req)
+    public function delItems(Request $req)
     {
+        $item = Barang::where('id',$req->id);
+        $item->delete();
 
+        return Response::json([
+            'message' => 'Data sukses dihapus'
+        ]);
+    }
+
+    public function addItems()
+    {
+        return view('pages.barang.make');
+    }
+
+    public function listItems()
+    {
+        $barangs = Barang::where('user_id',Auth::user()->id)->orderBy('created_at','desc')->get();
+        return view('pages.profile.kelolabarang',compact('barangs'));
+    }
+
+    public function storeItems(Request $req)
+    {
+        if($req->hasFile('path')){
+            $foto=$req->file('path');
+            $filename=time().".".$foto->getClientOriginalExtension();
+        }
+        else{
+            $filename="None";
+        }
+
+        if($req->hasFile('path')){
+            $img=Image::make($foto->getRealPath());
+            
+            $img->save(public_path('/img/uploads/resources/'.$filename));
+        }
+
+        Barang::create([
+            'user_id' => Auth::user()->id,
+            'nama_barang' => $req->nama_barang,
+            'harga_awal' => $req->harga_awal,
+            'path' => '/img/uploads/resources/'.$filename
+        ]);
+
+        return redirect('/barang');
     }
 }

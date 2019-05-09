@@ -27,8 +27,13 @@ Route::middleware(['auth'])->group(function(){
 });
 
 Route::middleware(['auth','verified'])->group(function(){
+	Route::get('/barangBuat','BarangController@addItems')->name('barangs_make');
+	Route::post('/barangSimpan','BarangController@storeItems')->name('barangs_store');
+	Route::post('/barangHapus','BarangController@delItems');
+	Route::get('/getAll','BarangController@getAll');
 	Route::get('/profile', 'HomeController@profile')->name('profile');
-	Route::get('/barang','BarangController@index')->name('barangs');
+	Route::get('/barang','BarangController@listItems')->name('barangs');
 	Route::post('/editprofile', 'HomeController@store');
-	Route::get('/make','BarangController@make')->name('make');
+	Route::get('/make','LelangController@make')->name('make');
+	Route::post('/lelangBuat','LelangController@addLelang')->name('lelang_store');
 });

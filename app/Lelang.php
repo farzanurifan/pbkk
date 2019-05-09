@@ -11,7 +11,7 @@ class Lelang extends Model
 ];
 
 	public function Barang(){
-   		return $this->belongsTo('App\Lelang');
+   		return $this->belongsTo('App\Barang');
    	}
 
    	public function User(){

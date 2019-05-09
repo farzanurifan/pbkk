@@ -1,7 +1,19 @@
 <script type="text/javascript">
 	$(document).ready(function(){
 		var csrf_ = $('meta[name="csrf-token"]').attr('content');
-	   	var print = console.log
+	   	var print = console.log;
+
+	   	$('.barang_hapus').click(function(){
+	   		id = $(this).attr('dataID');
+	   		$.post('barangHapus',{_token:csrf_,id:id},function(response){
+	   			print(id);
+	   		}).done(function(response){
+	   			$('#barang'+id).remove();
+	   			alert(response.message);
+	   		}).fail(function(response){
+	   			print(response);
+	   		})
+	   	});
 
 	   	$('#profile_edit').click(function(){
 			$('#profile_name').prop('disabled', false);

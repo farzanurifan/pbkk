@@ -5,37 +5,35 @@
     <section id="portfolio" class="wow fadeInUp"style="background-color:#EEEEEE">
         <div class="container">
           <div class="row">
-            <h2>Tambahkan barang untuk dilelang</h2>
+            <h2>Tambahkan barang</h2>
           </div>
-            <form action="#">
+            <form action="{{route('barangs_store')}}" method="POST" enctype="multipart/form-data">
+                @csrf
                 <div class="row">
-                        <div class="col-md-3">
-                            <div class="form-group form-group-sm">
-                                <label for="firstname" class="control-label">Firstname1</label>
-                                <input type="text" class="form-control" id="firstname" placeholder="Firstname">
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <label for="lastname" class="control-label">Last Name2</label>
-                                <input type="text" class="form-control" id="lastname" placeholder="Last Name">
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <label for="lastname" class="control-label">Last Name3</label>
-                                <input type="text" class="form-control" id="lastname" placeholder="Last Name">
-                            </div>
-                        </div>
-                </div>
-                <div class="row">
-                      <div class="col-xs-3">
-                          <textarea class="form-control"></textarea>
+                    <div class="col-md-3">
+                      <div class="form-group">
+                          <label for="nama_barang" class="control-label">Nama Barang</label>
+                          <input type="text" class="form-control" name="nama_barang" id="nama_barang" placeholder="Masukkan nama barang">
                       </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="form-group">
+                          <label for="gambarnya">Gambar</label>
+                          <input type="file" name="path" class="form-control-file" id="gambarnya">
+                      </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                      <div class="form-group">
+                          <label for="harga_awal" class="control-label">Harga Awal</label>
+                          <input type="number" class="form-control" name="harga_awal" id="nama_barang" placeholder="Masukkan harga awal">
+                      </div>
+                    </div>
                 </div>
                 <div class="row">
                       <div class="col-xs-3">
-                          <input type="submit" class="btn btn-default" value="Submit">
+                          <input type="submit" class="btn btn-success" value="Submit">
                       </div>
                 </div>
             </form>

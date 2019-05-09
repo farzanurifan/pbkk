@@ -59,7 +59,7 @@
 
                   </div>
                   <div class="" style="background-color: #909090; height: 60px; margin-top: 5px; opacity: 0.8;">
-                      <h2 ><span style="margin-top: 190px; text-align: center; font-size: 20px; color: #000000">{{$barang->nama_barang}}<br />Rp. {{$barang->harga_awal}}</span></h2>
+                      <h2 ><span style="margin-top: 190px; text-align: center; font-size: 20px; color: #000000">{{$barang->nama_barang}}<br />Rp. {{number_format($barang->harga_awal,2,',','.')}}</span></h2>
                     </div>
                 </a>
               </div>
