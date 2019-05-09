@@ -39,5 +39,5 @@ Route::middleware(['auth','verified'])->group(function(){
 });
 
 Route::group(['middleware' => ['admin']], function() {
-
+	Route::get('/kelola-barang','AdminController@barang')->name('kelola_baraang');
 });
