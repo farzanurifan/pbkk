@@ -22,7 +22,7 @@ class CreateLelangsTable extends Migration
             $table->integer('penawar_id')->nullable();
             $table->integer('harga');
             $table->string('status');
-            $table->integer('durasi');
+            $table->integer('durasi')->nullable();
             $table->timestamps();
         });
     }

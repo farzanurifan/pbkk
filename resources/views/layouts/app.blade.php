@@ -26,9 +26,7 @@
 
     <!-- Main Stylesheet File -->
     <link href={{asset("templates/css/style.css")}} rel="stylesheet">
-
     <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
-    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
     
     <script src={{asset("//code.jquery.com/jquery-1.11.1.min.js")}}></script>
     <!-- =======================================================
@@ -150,6 +148,7 @@
     <!-- Template Main Javascript File -->
     <script src={{asset("templates/js/main.js")}}></script>
     <script src={{asset("https://code.jquery.com/jquery-3.4.1.js")}} integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
     @include('scripts.script')
     </body>
 </html>

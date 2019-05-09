@@ -2,18 +2,51 @@
 	$(document).ready(function(){
 		var csrf_ = $('meta[name="csrf-token"]').attr('content');
 	   	var print = console.log;
+	   	var id_hapus;
+	   	var id_edit;
 
+	   	//Edit barang
+	   	$('.barang_edit').click(function(){
+	   		id_edit = $(this).attr('dataID');
+	   		$.get('baranglelang/'+id_edit,function(response){
+	   			$('#input-edit-barang-nama').val(response.barang.nama_barang);
+	   			$('#input-edit-barang-harga').val(response.barang.harga_awal);
+	   			$('#input-edit-barang-durasi').val(response.lelang.durasi);
+	   		});
+	   	})
+
+	   	$('.button-edit-barang').click(function(){
+	   		$.post('baranglelangs',{_token:csrf_,id_barang:id_edit},function(response){
+	   			print(response);
+	   		}).done()
+	   	});
+	   	//Edit barang
+
+	   	$('.toggle_lelang').change(function(){
+	   		print($(this).prop('checked'));
+	   		print($(this).attr('dataID'));
+	   	})
+
+	   	//Hapus barang
 	   	$('.barang_hapus').click(function(){
-	   		id = $(this).attr('dataID');
-	   		$.post('barangHapus',{_token:csrf_,id:id},function(response){
-	   			print(id);
+	   		id_hapus = $(this).attr('dataID');
+	   		$('.text-del-response-barang').hide();
+	   		print(id_hapus);
+	   		
+	   	});
+
+	   	$('.button-del-barang').click(function(){
+	   		$.post('barangHapus',{_token:csrf_,id:id_hapus},function(response){
+	   			print(id_hapus);
 	   		}).done(function(response){
-	   			$('#barang'+id).remove();
-	   			alert(response.message);
+	   			$('#barang'+id_hapus).remove();
+	   			$('.text-del-response-barang').text(response.message);
+	   			$('.text-del-response-barang').show();
 	   		}).fail(function(response){
 	   			print(response);
 	   		})
 	   	});
+	   	//Hapus barang
 
 	   	$('#profile_edit').click(function(){
 			$('#profile_name').prop('disabled', false);

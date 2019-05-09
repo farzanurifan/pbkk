@@ -2,7 +2,7 @@
 
 @section('content')
   <main id="main">
-    <section id="portfolio" class="wow fadeInUp"style="background-color:#EEEEEE">
+    <section id="portfolio" class="wow fadeInUp"style="background-color:#FFFFFF">
     
     <div class="container">
       <div class="section-header">
@@ -21,7 +21,7 @@
               <th>Nama Barang</th>
               <th>Harga awal</th>
               <th>Status</th>
-              <th></th>
+              <th>Durasi Lelang</th>
               <th></th>
             </tr>
           </thead>
@@ -31,8 +31,18 @@
               <td><img src="{{asset($barang->path)}}" alt="" style="height: 50px;width: 50px;"></td>
               <td>{{$barang->nama_barang}}</td>
               <td>Rp. {{number_format($barang->harga_awal,2,',','.')}}</td>
-              <td><button dataID="{{$barang->id}}" class="btn btn-danger barang_lelang">Lelang</button></td>
-              <td><button dataID="{{$barang->id}}" class="btn btn-danger barang_hapus">Hapus</button></td>
+              <td>
+                @if($barang->Lelang->status == "INACTIVE")
+                  <input type="checkbox" dataID="{{$barang->id}}" class="toggle_lelang" data-toggle="toggle" data-on="ON GOING" data-off="INACTIVE" data-style="slow" data-offstyle="danger">
+                @elseif($barang->Lelang->status == "ON GOING")
+                  <input type="checkbox" dataID="{{$barang->id}}" class="toggle_lelang" checked data-toggle="toggle" data-on="ON GOING" data-off="INACTIVE" data-style="slow" data-offstyle="danger">
+                @endif
+              </td>
+              <td>{{$barang->Lelang->durasi}}</td>
+              <td>
+                  <a dataID="{{$barang->id}}" class="btn btn-warning barang_edit" href="#editBarangModal" data-toggle="modal">Ubah</a>
+                  <a dataID="{{$barang->id}}" class="btn btn-danger barang_hapus" href="#delBarangModal" data-toggle="modal">Hapus</a>
+              </td>
             </tr>
           @endforeach
           </tbody>
@@ -41,7 +51,8 @@
       </div>
 
     </div>
-    
+    @include('pages.barang.edit')
+    @include('pages.barang.delete')
     </section>
 
     <!-- #portfolio -->

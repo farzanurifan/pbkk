@@ -33,9 +33,12 @@ Route::middleware(['auth','verified'])->group(function(){
 	Route::get('/barang','BarangController@listItems')->name('barangs');
 	Route::get('/getAll','BarangController@getAll');
 
+	Route::get('/baranglelang/{id}', 'BarangController@getBarangLelang');
+	Route::post('/baranglelangs','BarangController@updateBarangLelang')
+
 	Route::get('/profile', 'HomeController@profile')->name('profile');
 	Route::post('/editprofile', 'HomeController@store');
-	
+
 	Route::get('/make','LelangController@make')->name('make');
 	Route::post('/lelangBuat','LelangController@addLelang')->name('lelang_store');
 });

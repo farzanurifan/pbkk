@@ -32,6 +32,14 @@
                     </div>
                 </div>
                 <div class="row">
+                    <div class="col-md-3">
+                      <div class="form-group">
+                          <label for="durasi" class="control-label">Durasi Lelang</label>
+                          <input type="number" class="form-control" name="durasi" id="durasi" placeholder="Masukkan durasi lelang (hari)">
+                      </div>
+                    </div>
+                </div>
+                <div class="row">
                       <div class="col-xs-3">
                           <input type="submit" class="btn btn-success" value="Submit">
                       </div>
