@@ -27,7 +27,9 @@
     <!-- Main Stylesheet File -->
     <link href={{asset("templates/css/style.css")}} rel="stylesheet">
 
-
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+    
     <script src={{asset("//code.jquery.com/jquery-1.11.1.min.js")}}></script>
     <!-- =======================================================
         Theme Name: Reveal

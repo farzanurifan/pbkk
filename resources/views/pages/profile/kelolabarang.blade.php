@@ -20,6 +20,8 @@
               <th></th>
               <th>Nama Barang</th>
               <th>Harga awal</th>
+              <th>Status</th>
+              <th></th>
               <th></th>
             </tr>
           </thead>
@@ -29,6 +31,7 @@
               <td><img src="{{asset($barang->path)}}" alt="" style="height: 50px;width: 50px;"></td>
               <td>{{$barang->nama_barang}}</td>
               <td>Rp. {{number_format($barang->harga_awal,2,',','.')}}</td>
+              <td><button dataID="{{$barang->id}}" class="btn btn-danger barang_lelang">Lelang</button></td>
               <td><button dataID="{{$barang->id}}" class="btn btn-danger barang_hapus">Hapus</button></td>
             </tr>
           @endforeach
