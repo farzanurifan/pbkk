@@ -20,6 +20,7 @@ class CreateBarangsTable extends Migration
             $table->string('nama_barang');
             $table->integer('harga_awal');
             $table->string('path')->nullable();
+            $table->string('special_token')->nullable();
             $table->timestamps();
         });
     }

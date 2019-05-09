@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Barang extends Model
 {
 	protected $fillable = [
-	 'nama_barang','harga_awal','path','user_id'
+	 'nama_barang','harga_awal','path','user_id','special_token'
   ];
 
 	public function TipeBarang(){
