@@ -15,7 +15,8 @@ class Admin
      */
     public function handle($request, Closure $next)
     {
-        if(auth()->user()->isAdmin) {
+        // dd($request);
+        if(auth()->user()->is_admin) {
             return $next($request);
         }
         return redirect('home');
