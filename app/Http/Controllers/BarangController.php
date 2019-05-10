@@ -26,11 +26,16 @@ class BarangController extends Controller
 
     public function search(Request $req)
     {
-    	$barangs = Barang::where('nama_barang','like',"%".$req->searchbar."%")->orderBy('created_at','desc')->get();
+    	$lelangs = Barang::where('nama_barang','like',"%".$req->searchbar."%")->orderBy('created_at','desc')->get();
+        foreach ($lelangs as $lelang) {
+            if ($lelang->Lelang()->status != "ON GOING") {
+                unset($lelang);
+            }
+        }
     	$title = $req->searchbar;
-    	$count = count($barangs);
+    	$count = count($lelangs);
     	
-    	return view('pages.barang.searchRes',compact('barangs','title','count'));
+    	return view('pages.lelang.searchRes',compact('lelangs','title','count'));
     }
 
     public function delItems(Request $req)

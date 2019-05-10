@@ -18,12 +18,12 @@ Route::get('/', function () {
 Auth::routes(['verify' => true]);
 
 Route::get('/kategori/dummy', 'HomeController@kategori')->name('kategori');
-Route::get('/barang/{id}','BarangController@detail');
+Route::get('/lelang/{id}','LelangController@detail');
 Route::post('/search','BarangController@search')->name('searchItem');
 Route::get('/filterbarang', 'HomeController@filterbarang')->name('filterbarang');
 
 Route::middleware(['auth'])->group(function(){
-	Route::get('/home', 'BarangController@index')->name('home');
+	Route::get('/home', 'LelangController@index')->name('home');
 });
 
 Route::middleware(['auth','verified'])->group(function(){

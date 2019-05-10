@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Barang;
+use App\Lelang;
 
 class LelangController extends Controller
 {
@@ -16,5 +16,11 @@ class LelangController extends Controller
     public function addLelang(Request $req)
     {
     	
+    }
+
+    public function index()
+    {
+    	$lelangs = Lelang::orderBy('created_at','desc')->where('status','ON GOING')->get();
+        return view('home',compact('lelangs'));
     }
 }
