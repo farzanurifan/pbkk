@@ -18,7 +18,7 @@
 						<label>Durasi</label>
 						<input id="input-edit-barang-durasi" type="number" class="form-control" required>
 					</div>
-					<h4 class="text-success text-edit-response-mhs"></h4>
+					<h4 class="text-success text-edit-response-barang"></h4>
 				</div>
 				<div class="modal-footer">
 					<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">

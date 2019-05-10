@@ -36,6 +36,8 @@ class BarangController extends Controller
     public function delItems(Request $req)
     {
         $item = Barang::where('id',$req->id);
+        $lels = Lelang::where('barang_id',$req->id);
+        $lels->delete();
         $item->delete();
 
         return Response::json([
@@ -90,13 +92,37 @@ class BarangController extends Controller
         return redirect('/barang');
     }
 
-    
+
     public function getBarangLelang($id)
     {
         $barang = Barang::where('id',$id)->first();
         $lelang = Lelang::where('barang_id',$id)->first();
         return Response::json([
             'barang' => $barang,
+            'lelang' => $lelang
+        ]);
+    }
+
+    public function updateBarangLelang(Request $req)
+    {
+        $special_token = uniqid();
+        Barang::where('id',$req->id_barang)->update([
+            'nama_barang' => $req->nama_barang,
+            'harga_awal' => $req->harga_awal,
+            'special_token' => $special_token
+        ]);
+
+        Lelang::where('barang_id',$req->id_barang)->update([
+            'durasi' => $req->durasi,
+            'harga' => $req->harga_awal
+        ]);
+
+        $brg = Barang::where('special_token',$special_token)->first();
+        $lelang = Lelang::where('barang_id',$brg->id)->first();
+
+        return Response::json([
+            'message' => 'Data talah berhasil diubah.',
+            'barang' => $brg,
             'lelang' => $lelang
         ]);
     }

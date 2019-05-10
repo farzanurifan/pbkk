@@ -29,8 +29,8 @@
           @foreach($barangs as $barang)
             <tr id="barang{{$barang->id}}">
               <td><img src="{{asset($barang->path)}}" alt="" style="height: 50px;width: 50px;"></td>
-              <td>{{$barang->nama_barang}}</td>
-              <td>Rp. {{number_format($barang->harga_awal,2,',','.')}}</td>
+              <td id="brgnama{{$barang->id}}">{{$barang->nama_barang}}</td>
+              <td id="brgharga{{$barang->id}}">Rp. {{number_format($barang->harga_awal,2,',','.')}}</td>
               <td>
                 @if($barang->Lelang->status == "INACTIVE")
                   <input type="checkbox" dataID="{{$barang->id}}" class="toggle_lelang" data-toggle="toggle" data-on="ON GOING" data-off="INACTIVE" data-style="slow" data-offstyle="danger">
@@ -38,7 +38,7 @@
                   <input type="checkbox" dataID="{{$barang->id}}" class="toggle_lelang" checked data-toggle="toggle" data-on="ON GOING" data-off="INACTIVE" data-style="slow" data-offstyle="danger">
                 @endif
               </td>
-              <td>{{$barang->Lelang->durasi}}</td>
+              <td id="brgdurasi{{$barang->id}}">{{$barang->Lelang->durasi}}</td>
               <td>
                   <a dataID="{{$barang->id}}" class="btn btn-warning barang_edit" href="#editBarangModal" data-toggle="modal">Ubah</a>
                   <a dataID="{{$barang->id}}" class="btn btn-danger barang_hapus" href="#delBarangModal" data-toggle="modal">Hapus</a>

@@ -8,6 +8,7 @@
 	   	//Edit barang
 	   	$('.barang_edit').click(function(){
 	   		id_edit = $(this).attr('dataID');
+	   		$('.text-edit-response-barang').hide();
 	   		$.get('baranglelang/'+id_edit,function(response){
 	   			$('#input-edit-barang-nama').val(response.barang.nama_barang);
 	   			$('#input-edit-barang-harga').val(response.barang.harga_awal);
@@ -16,9 +17,17 @@
 	   	})
 
 	   	$('.button-edit-barang').click(function(){
-	   		$.post('baranglelangs',{_token:csrf_,id_barang:id_edit},function(response){
+	   		$.post('baranglelangs',{_token:csrf_,id_barang:id_edit,nama_barang:$('#input-edit-barang-nama').val(),harga_awal:$('#input-edit-barang-harga').val(),durasi:$('#input-edit-barang-durasi').val()},function(response){
 	   			print(response);
-	   		}).done()
+	   		}).done(function(response){
+	   			$('.text-edit-response-barang').text(response.message);
+	   			$('.text-edit-response-barang').show();
+	   			$('#brgnama'+id_edit).html(response.barang.nama_barang);
+	   			$('#brgharga'+id_edit).html(response.barang.harga_awal);
+	   			$('#brgdurasi'+id_edit).html(response.lelang.durasi);
+	   		}).fail(function(response){
+	   			print(response);
+	   		})
 	   	});
 	   	//Edit barang
 

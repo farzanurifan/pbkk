@@ -16,7 +16,7 @@ class CreateLelangsTable extends Migration
         Schema::create('lelangs', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('barang_id')->unsigned();
-            $table->foreign('barang_id')->references('id')->on('lelangs');
+            $table->foreign('barang_id')->references('id')->on('barangs');
             $table->bigInteger('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
             $table->integer('penawar_id')->nullable();

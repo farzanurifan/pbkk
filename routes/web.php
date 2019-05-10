@@ -34,7 +34,7 @@ Route::middleware(['auth','verified'])->group(function(){
 	Route::get('/getAll','BarangController@getAll');
 
 	Route::get('/baranglelang/{id}', 'BarangController@getBarangLelang');
-	Route::post('/baranglelangs','BarangController@updateBarangLelang')
+	Route::post('/baranglelangs','BarangController@updateBarangLelang');
 
 	Route::get('/profile', 'HomeController@profile')->name('profile');
 	Route::post('/editprofile', 'HomeController@store');
