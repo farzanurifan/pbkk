@@ -28,7 +28,8 @@ class BarangController extends Controller
     {
     	$lelangs = Barang::where('nama_barang','like',"%".$req->searchbar."%")->orderBy('created_at','desc')->get();
         foreach ($lelangs as $lelang) {
-            if ($lelang->Lelang()->status != "ON GOING") {
+            $temp = $lelang->Lelang()->first();
+            if ($temp->status != "ON GOING") {
                 unset($lelang);
             }
         }

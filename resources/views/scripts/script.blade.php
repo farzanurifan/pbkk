@@ -32,6 +32,24 @@
 	   	//Edit barang
 
 	   	$('.toggle_lelang').change(function(){
+	   		if ($(this).prop('checked')==true) {
+	   			$.post('changeStatus',{_token:csrf_,id:$(this).attr('dataID'),status:'ON GOING'},function(response){
+
+	   			}).done(function(response){
+	   				alert(response.message);
+	   			}).fail(function(response){
+	   				print(response);
+	   			});
+	   		} 
+	   		else if ($(this).prop('checked')==false) {
+	   			$.post('changeStatus',{_token:csrf_,id:$(this).attr('dataID'),status:'INACTIVE'},function(response){
+
+	   			}).done(function(response){
+	   				alert(response.message);
+	   			}).fail(function(response){
+	   				print(response);
+	   			});
+	   		}
 	   		print($(this).prop('checked'));
 	   		print($(this).attr('dataID'));
 	   	})
