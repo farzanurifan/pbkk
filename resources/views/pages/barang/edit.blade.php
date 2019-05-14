@@ -18,6 +18,10 @@
 						<label>Durasi</label>
 						<input id="input-edit-barang-durasi" type="number" class="form-control" required>
 					</div>
+					<div class="form-group">
+                        <label for="comment">Keterangan Barang</label>
+                        <textarea class="form-control" rows="5"  id="input-edit-barang-keterangan"></textarea>
+                     </div>
 					<h4 class="text-success text-edit-response-barang"></h4>
 				</div>
 				<div class="modal-footer">

@@ -17,11 +17,12 @@
         <table class="table table-condensed">
           <thead>
             <tr>
-              <th>Gambar</th>
+              <th></th>
               <th>Nama Barang</th>
               <th>Harga awal</th>
               <th>Status Barang</th>
               <th>Durasi Lelang</th>
+              <th>Keterangan</th>
               <th></th>
             </tr>
           </thead>
@@ -39,6 +40,7 @@
                 @endif
               </td>
               <td id="brgdurasi{{$barang->id}}">{{$barang->Lelang->durasi}}</td>
+              <td id="brgdurasi{{$barang->id}}">{{$barang->keterangan_barang}}</td>
               <td>
                   <a dataID="{{$barang->id}}" class="btn btn-warning barang_edit" href="#editBarangModal" data-toggle="modal">Ubah</a>
                   <a dataID="{{$barang->id}}" class="btn btn-danger barang_hapus" href="#delBarangModal" data-toggle="modal">Hapus</a>

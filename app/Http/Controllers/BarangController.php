@@ -9,17 +9,10 @@ use DB;
 use Auth;
 use Image;
 use Response;
+use Storage;
 
 class BarangController extends Controller
 {
-
-//13may
-     public function detailbarang()
-    {
-        return view('pages.barang.detailbarang');
-    }
-//
-
     public function index()
     {
     	$barangs = Barang::orderBy('created_at','desc')->get();
@@ -49,11 +42,13 @@ class BarangController extends Controller
 
     public function delItems(Request $req)
     {
+        $filenya = Barang::where('id',$req->id)->first();
         $item = Barang::where('id',$req->id);
         $lels = Lelang::where('barang_id',$req->id);
         $lels->delete();
         $item->delete();
 
+        Storage::disk('public')->delete($filenya->path);
         return Response::json([
             'message' => 'Data sukses dihapus'
         ]);
@@ -98,7 +93,8 @@ class BarangController extends Controller
             'nama_barang' => $req->nama_barang,
             'harga_awal' => $req->harga_awal,
             'path' => '/img/uploads/resources/'.$filename,
-            'special_token' => $uniq_token
+            'special_token' => $uniq_token,
+            'keterangan_barang' => $req->keterangan_barang
         ]);
 
         $brg = Barang::where('special_token',$uniq_token)->first();

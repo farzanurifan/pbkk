@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-})->name('landing');
+Route::get('/', 'LelangController@index')->name('landing');
 
 Auth::routes(['verify' => true]);
 
@@ -21,7 +19,7 @@ Route::get('/kategori/dummy', 'HomeController@kategori')->name('kategori');
 Route::get('/lelang/{id}','LelangController@detail');
 Route::post('/search','BarangController@search')->name('searchItem');
 Route::get('/filterbarang', 'HomeController@filterbarang')->name('filterbarang');
-Route::get('/lihatbarang/dummy', 'LelangController@lihatbarang')->name('lihatbarang');
+Route::get('/beranda', 'LelangController@allLelang')->name('beranda');
 
 
 Route::middleware(['auth'])->group(function(){
@@ -35,7 +33,9 @@ Route::middleware(['auth','verified'])->group(function(){
 	Route::get('/barang','BarangController@listItems')->name('barangs');
 	Route::get('/getAll','BarangController@getAll');
 //13may
-	Route::get('/detailbarang','BarangController@detailbarang')->name('barangs_detail');
+	Route::get('/detailbarang',function(){
+		return view('pages.barang.detailbarang');
+	})->name('barangs_detail');
 
 	/*
 	Route::get('/detailbarang/{id}', 'BarangController@getDetailBarang');

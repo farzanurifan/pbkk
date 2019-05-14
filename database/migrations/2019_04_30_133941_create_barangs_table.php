@@ -19,6 +19,7 @@ class CreateBarangsTable extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('nama_barang');
             $table->integer('harga_awal');
+            $table->string('keterangan_barang');
             $table->string('path')->nullable();
             $table->string('special_token')->nullable();
             $table->timestamps();

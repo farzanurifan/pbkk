@@ -13,6 +13,7 @@
 	   			$('#input-edit-barang-nama').val(response.barang.nama_barang);
 	   			$('#input-edit-barang-harga').val(response.barang.harga_awal);
 	   			$('#input-edit-barang-durasi').val(response.lelang.durasi);
+	   			$('#input-edit-barang-keterangan').val(response.lelang.keterangan_barang);
 	   		});
 	   	})
 

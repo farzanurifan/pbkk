@@ -63,7 +63,7 @@
                     <div class="col-md-3">
                       <div class="form-group">
                         <label for="comment">Keterangan Barang</label>
-                        <textarea class="form-control" rows="5" id="comment"></textarea>
+                        <textarea class="form-control" rows="5"  id="comment" name="keterangan_barang"></textarea>
                       </div>
                     </div>
                 </div>

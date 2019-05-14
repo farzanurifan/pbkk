@@ -13,25 +13,26 @@
     
         <div class="container-fluid">
             <div class="row no-gutters">
-    
-            <div class="col-lg-3 col-md-3" style="padding: 10px">
-                <div class="portfolio-item wow fadeInUp">
-                <a href="hasilcariberanda.html" class="" >
-                    <img src="img/rec1.jpg" alt="">
-                    <div class="portfolio-overlay">
-                    <div class="portfolio-info"><h2 class="wow fadeInUp"></h2></div>
-    
-                    </div>
-                    <div class="" style="background-color: #909090; height: 60px; margin-top: 5px; opacity: 0.8;">
-                        <h2 ><span style="margin-top: 190px; text-align: center; font-size: 20px; color: #000000">Laptop Lenovo VIBE<br />Rp. 10.000</span></h2>
-                    </div>
-                </a>
+                @foreach($lelangs as $lelang)
+                <div class="col-lg-3 col-md-3" style="padding: 10px">
+                  <div class="portfolio-item wow fadeInUp">
+                    <a href="{{URL::to('/lelang').'/'.$lelang->id}}" class="" >
+                      <img src="{{asset($lelang->Barang->path)}}" alt="">
+                      <div class="portfolio-overlay">
+                        <div class="portfolio-info"><h2 class="wow fadeInUp"></h2></div>
+
+                      </div>
+                      <div class="" style="background-color: #909090; height: 60px; margin-top: 5px; opacity: 0.8;">
+                          <h2 ><span style="margin-top: 190px; text-align: center; font-size: 20px; color: #000000">{{$lelang->Barang->nama_barang}}<br />Rp. {{number_format($lelang->harga,2,',','.')}}</span></h2>
+                      </div>
+                    </a>
+                  </div>
                 </div>
-            </div>
+                @endforeach
     
             <div class="col-lg-3 col-md-3" style="padding: 10px">
                 <div class="portfolio-item wow fadeInUp">
-                <a href="hasilcariberanda.html" class="" >
+                <a href="{{URL::to('/detailbarang')}}" class="" >
                     <img src="img/rec2.jpg" alt="">
                     <div class="portfolio-overlay">
                     <div class="portfolio-info"><h2 class="wow fadeInUp"></h2></div>
