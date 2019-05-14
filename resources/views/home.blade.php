@@ -32,6 +32,29 @@
 
   </section><!-- #intro -->
 
+  <section id="about" class="wow fadeInUp">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 about-img">
+            <img src="img/sold.jpg" alt="">
+          </div>
+
+          <div class="col-lg-6 content">
+            <h2>Apa Itu <span>ITS-LELANG</span> ?</h2>
+            <h3>ITS-LELANG merupakan sistem aplikasi berbasis web yang mengatur tentang kegiatan jual beli dalam proses pelelangan barang yang berfokus pada lingkup ITS.</h3>
+
+            <ul>
+              <li><i class="ion-android-checkmark-circle"></i> Jual Barangmu di Sini.</li>
+              <li><i class="ion-android-checkmark-circle"></i> Temukan Barang yang kamu inginkan di Sini.</li>
+              <li><i class="ion-android-checkmark-circle"></i> Dapatkan Barang Bekas Terbaik Hanya di Sini.</li>
+            </ul>
+
+          </div>
+        </div>
+
+      </div>
+    </section><!-- #about -->
+
 
   <main id="main">
 
