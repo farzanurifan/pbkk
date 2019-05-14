@@ -1,4 +1,4 @@
-<div id="editBarangModal" class="modal fade">
+<div id="lelangBarangModal" class="modal fade">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">						
@@ -11,8 +11,12 @@
 						<input id="input-edit-barang-nama" type="text" class="form-control" required>
 					</div>
 					<div class="form-group">
-						<label>Harga Barang</label>
-						<input id="input-edit-barang-harga" type="text" class="form-control" required>
+						<label>Harga Barang Terakhir</label>
+						<input id="input-edit-barang-nama" type="text" class="form-control" required>
+					</div>
+					<div class="form-group">
+						<label>Harga Barang Lelang</label>
+						<input id="input-edit-barang-harga" type="text" class="form-control" required placeholder="masukkan harga yang ditawarkan">
 						
 					<h4 class="text-success text-edit-response-barang"></h4>
 				</div>

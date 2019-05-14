@@ -70,7 +70,7 @@
               </div>
             </div>
 
-            <a href="chat_pelanggan.html" class="btn-get-started scrollto" style="color: #ffffff">
+            <a class="btn-get-started scrollto" style="color: #ffffff" href="#lelangBarangModal"data-toggle="modal">
             <div class="" style="background-color: #2e4ca5; height: 35px; border-radius: 3px; text-align: center; font-size: 16px; padding-top: 5px; margin-top: 10px">
               Lelang Barang
             </div>
@@ -82,6 +82,7 @@
         </div>
 
       </div>
+      @include('pages.lelang.lelang')
     </section>
 
     <br>
