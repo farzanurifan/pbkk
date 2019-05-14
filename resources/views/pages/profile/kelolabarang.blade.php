@@ -7,7 +7,7 @@
     <div class="container">
       <div class="section-header">
         <h2 style="text-align: center;">Kelola barang-barang anda</h2>
-        <p><a href="{{route('barangs_make')}}">Tambahkan barang</a></p>
+        <b><p style="text-align: right"><a href="{{route('barangs_make')}}" class="btn btn-success">Tambah</a></p></b>
       </div>
     </div>
 
@@ -17,10 +17,10 @@
         <table class="table table-condensed">
           <thead>
             <tr>
-              <th></th>
+              <th>Gambar</th>
               <th>Nama Barang</th>
               <th>Harga awal</th>
-              <th>Status</th>
+              <th>Status Barang</th>
               <th>Durasi Lelang</th>
               <th></th>
             </tr>

@@ -12,7 +12,12 @@ class LelangController extends Controller
     {
     	$barangs = Barang::orderBy('created_at','desc')->get();
     	return view('pages.lelang.make',compact('barangs'));
-    }    
+    }   
+
+    public function lihatbarang()
+    {
+        return view('pages.lelang.lihatbarang');
+    } 
 
     public function addLelang(Request $req)
     {

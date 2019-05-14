@@ -12,6 +12,14 @@ use Response;
 
 class BarangController extends Controller
 {
+
+//13may
+     public function detailbarang()
+    {
+        return view('pages.barang.detailbarang');
+    }
+//
+
     public function index()
     {
     	$barangs = Barang::orderBy('created_at','desc')->get();
@@ -55,7 +63,14 @@ class BarangController extends Controller
     {
         return view('pages.barang.make');
     }
-
+//13may
+    /*
+    public function detail()
+    {
+        return view('pages.barang.detailbarang');
+    }
+    */
+//
     public function listItems()
     {
         $barangs = Barang::where('user_id',Auth::user()->id)->orderBy('created_at','desc')->get();

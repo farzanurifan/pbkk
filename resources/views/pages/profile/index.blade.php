@@ -55,31 +55,6 @@
         </div>
       </div>
       
-      <!-- Text input-->
-      
-      <!-- <div class="form-group">
-        <label class="col-md-4 control-label" >Last Name</label>
-        <div class="col-md-6  inputGroupContainer">
-          <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-            <input name="last_name" placeholder="Last Name" class="form-control"  type="text">
-          </div>
-        </div>
-      </div> -->
-      
-    
-      <!-- Text input-->
-      
-      <!-- <div class="form-group">
-        <label class="col-md-4 control-label">Phone #</label>
-        <div class="col-md-6  inputGroupContainer">
-          <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-            <input name="phone" placeholder="(845)555-1212" class="form-control" type="text">
-          </div>
-        </div>
-      </div> -->
-      
-      <!-- Text input-->
-      
       <div class="form-group">
         <label class="col-md-4 control-label">Alamat</label>
         <div class="col-md-6  inputGroupContainer">
@@ -100,108 +75,6 @@
         </div>
       </div>
 
-
-      <!-- Text input-->
-      
-      <!-- <div class="form-group">
-        <label class="col-md-4 control-label">City</label>
-        <div class="col-md-6  inputGroupContainer">
-          <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-            <input name="city" placeholder="city" class="form-control"  type="text">
-          </div>
-        </div>
-      </div> -->
-      
-      <!-- Select Basic -->
-      
-     <!--  <div class="form-group">
-        <label class="col-md-4 control-label">State</label>
-        <div class="col-md-6 selectContainer">
-          <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-            <select name="state" class="form-control selectpicker" >
-              <option value=" " >Please select your state</option>
-              <option>Alabama</option>
-              <option>Alaska</option>
-              <option >Arizona</option>
-              <option >Arkansas</option>
-              <option >California</option>
-              <option >Colorado</option>
-              <option >Connecticut</option>
-              <option >Delaware</option>
-              <option >District of Columbia</option>
-              <option> Florida</option>
-              <option >Georgia</option>
-              <option >Hawaii</option>
-              <option >daho</option>
-              <option >Illinois</option>
-              <option >Indiana</option>
-              <option >Iowa</option>
-              <option> Kansas</option>
-              <option >Kentucky</option>
-              <option >Louisiana</option>
-              <option>Maine</option>
-              <option >Maryland</option>
-              <option> Mass</option>
-              <option >Michigan</option>
-              <option >Minnesota</option>
-              <option>Mississippi</option>
-              <option>Missouri</option>
-              <option>Montana</option>
-              <option>Nebraska</option>
-              <option>Nevada</option>
-              <option>New Hampshire</option>
-              <option>New Jersey</option>
-              <option>New Mexico</option>
-              <option>New York</option>
-              <option>North Carolina</option>
-              <option>North Dakota</option>
-              <option>Ohio</option>
-              <option>Oklahoma</option>
-              <option>Oregon</option>
-              <option>Pennsylvania</option>
-              <option>Rhode Island</option>
-              <option>South Carolina</option>
-              <option>South Dakota</option>
-              <option>Tennessee</option>
-              <option>Texas</option>
-              <option> Uttah</option>
-              <option>Vermont</option>
-              <option>Virginia</option>
-              <option >Washington</option>
-              <option >West Virginia</option>
-              <option>Wisconsin</option>
-              <option >Wyoming</option>
-            </select>
-          </div>
-        </div>
-      </div>
-       -->
-      <!-- Text input-->
-      
-      <!-- <div class="form-group">
-        <label class="col-md-4 control-label">Zip Code</label>
-        <div class="col-md-6  inputGroupContainer">
-          <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-            <input name="zip" placeholder="Zip Code" class="form-control"  type="text">
-          </div>
-        </div>
-      </div> -->
-      
-        <!-- Text area -->
-      
-      <!-- <div class="form-group">
-        <label class="col-md-4 control-label">About </label>
-        <div class="col-md-6  inputGroupContainer">
-          <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-            <textarea class="form-control" name="comment" placeholder="About "></textarea>
-          </div>
-        </div>
-      </div> -->
-       
-
-        <!-- <legend> Account information </legend> -->
-        
-        <!-- Text input-->
       <div class="form-group">
         <label class="col-md-4 control-label">E-Mail</label>
         <div class="col-md-6  inputGroupContainer">
@@ -216,34 +89,6 @@
     <button id="profile_cancel" class="btn btn-danger" style="display: none">Cancel</button>
     <p id="profile_response_msg" style="display: none"></p>
     <br><br>
-        <!-- <div class="form-group has-feedback">
-            <label for="confirmPassword"  class="col-md-4 control-label">
-                   Confirm Password
-                </label>
-                 <div class="col-md-6  inputGroupContainer">
-                <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-            <input class="form-control {$borderColor}" id="userPw2" type="password" placeholder="Confirm password" 
-                       name="confirmPassword" data-match="#confirmPassword" data-minLength="5"
-                       data-match-error="some error 2"
-                       required/>
-                <span class="glyphicon form-control-feedback"></span>
-                <span class="help-block with-errors"></span>
-             </div>
-             </div>
-        </div> -->
-     
-  
-      <!-- Button -->
-      <!-- <div class="form-group">
-        <label class="col-md-4 control-label"></label>
-        <div class="col-md-7">
-          <button type="submit" class="btn-get-started" style="margin-left: 115px">Submit</button>
-        </div>
-      </div> -->
-
-      <!-- <div style="text-align: center; ">
-        <legend style="font-size: 14px; padding-bottom: 10px; margin-top: -15px">Sudah punya akun pemilik kos? <a href="login.html" class="" ><b>Masuk sekarang</b></a></legend>
-      </div> -->
     </fieldset>
 
   </div>

@@ -16,13 +16,24 @@
                           <input type="text" class="form-control" name="nama_barang" id="nama_barang" placeholder="Masukkan nama barang">
                       </div>
                     </div>
+                </div>
+                 <div class="row">
                     <div class="col-md-3">
                       <div class="form-group">
-                          <label for="gambarnya">Gambar</label>
-                          <input type="file" name="path" class="form-control-file" id="gambarnya">
+                          <label for="kategorinya" class="control-label">Kategori</label>
+                           <select type="text" class="form-control" name="tipe_barang" id="tipe_barang" placeholder="Masukkan kategori barang">
+                          <option value="volvo">Semua Kategori</option>
+                          <option value="volvo">Elektronik</option>
+                          <option value="volvo">Pria</option>
+                          <option value="volvo">Wanita</option>
+                          <option value="volvo">Buku</option>
+                          <option value="volvo">Furniture</option>
+                          <option value="volvo">Kendaraan</option>
+                        </select>
                       </div>
                     </div>
-                </div>
+                  </div>
+                
                 <div class="row">
                     <div class="col-md-3">
                       <div class="form-group">
@@ -31,7 +42,7 @@
                       </div>
                     </div>
                 </div>
-                <div class="row">
+                 <div class="row">
                     <div class="col-md-3">
                       <div class="form-group">
                           <label for="durasi" class="control-label">Durasi Lelang</label>
@@ -39,6 +50,24 @@
                       </div>
                     </div>
                 </div>
+                <div class="row">
+                <div class="col-md-3">
+                      <div class="form-group">
+                          <label for="gambarnya">Gambar</label>
+                          <input type="file" name="path" class="form-control-file" id="gambarnya">
+                      </div>
+                    </div>
+                  </div>
+
+                   <div class="row">
+                    <div class="col-md-3">
+                      <div class="form-group">
+                        <label for="comment">Keterangan Barang</label>
+                        <textarea class="form-control" rows="5" id="comment"></textarea>
+                      </div>
+                    </div>
+                </div>
+                
                 <div class="row">
                       <div class="col-xs-3">
                           <input type="submit" class="btn btn-success" value="Submit">
@@ -50,6 +79,7 @@
   
 
     <!-- #portfolio -->
+    
 
     <!--==========================
       Clients Section

@@ -21,6 +21,8 @@ Route::get('/kategori/dummy', 'HomeController@kategori')->name('kategori');
 Route::get('/lelang/{id}','LelangController@detail');
 Route::post('/search','BarangController@search')->name('searchItem');
 Route::get('/filterbarang', 'HomeController@filterbarang')->name('filterbarang');
+Route::get('/lihatbarang/dummy', 'LelangController@lihatbarang')->name('lihatbarang');
+
 
 Route::middleware(['auth'])->group(function(){
 	Route::get('/home', 'LelangController@index')->name('home');
@@ -32,7 +34,14 @@ Route::middleware(['auth','verified'])->group(function(){
 	Route::post('/barangHapus','BarangController@delItems');
 	Route::get('/barang','BarangController@listItems')->name('barangs');
 	Route::get('/getAll','BarangController@getAll');
+//13may
+	Route::get('/detailbarang','BarangController@detailbarang')->name('barangs_detail');
 
+	/*
+	Route::get('/detailbarang/{id}', 'BarangController@getDetailBarang');
+	Route::post('/detailbarangs','BarangController@updateDetailBarang');
+	*/
+//
 	Route::get('/baranglelang/{id}', 'BarangController@getBarangLelang');
 	Route::post('/baranglelangs','BarangController@updateBarangLelang');
 
