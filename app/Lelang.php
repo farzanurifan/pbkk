@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Lelang extends Model
 {
 	protected $fillable = [
-	'harga','status','durasi','barang_id','user_id','penawar_id'
+	'harga','status','durasi','barang_id','user_id','penawar_id','min_bid'
 ];
 
 	public function Barang(){

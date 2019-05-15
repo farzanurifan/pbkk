@@ -12,7 +12,11 @@
 					</div>
 					<div class="form-group">
 						<label>Harga Barang</label>
-						<input id="input-edit-barang-harga" type="text" class="form-control" required>
+						<input id="input-edit-barang-harga" type="number" class="form-control" required>
+					</div>
+					<div class="form-group">
+						<label>Minimal Bid Raise</label>
+						<input id="input-edit-barang-minbid" type="number" class="form-control" required>
 					</div>
 					<div class="form-group">
 						<label>Durasi</label>

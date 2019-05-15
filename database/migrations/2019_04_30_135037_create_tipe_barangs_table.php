@@ -15,6 +15,8 @@ class CreateTipeBarangsTable extends Migration
     {
         Schema::create('tipe_barangs', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->bigInteger('barang_id')->unsigned();
+            $table->foreign('barang_id')->references('id')->on('barangs');
             $table->string('tipe_barang');
             $table->timestamps();
         });

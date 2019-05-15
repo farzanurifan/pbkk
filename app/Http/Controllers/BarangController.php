@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Barang;
 use App\Lelang;
+use App\TipeBarang;
 use DB;
 use Auth;
 use Image;
@@ -45,6 +46,8 @@ class BarangController extends Controller
         $filenya = Barang::where('id',$req->id)->first();
         $item = Barang::where('id',$req->id);
         $lels = Lelang::where('barang_id',$req->id);
+        $type = TipeBarang::where('barang_id',$req->id);
+        $type->delete();
         $lels->delete();
         $item->delete();
 
@@ -103,7 +106,12 @@ class BarangController extends Controller
             'user_id' => Auth::user()->id,
             'harga' => $req->harga_awal,
             'status' => 'INACTIVE',
-            'durasi' => $req->durasi
+            'durasi' => $req->durasi,
+            'min_bid' => $req->min_bid
+        ]);
+        TipeBarang::create([
+            'barang_id' => $brg->id,
+            'tipe_barang' => $req->tipe_barang
         ]);
 
         return redirect('/barang');
@@ -131,7 +139,8 @@ class BarangController extends Controller
 
         Lelang::where('barang_id',$req->id_barang)->update([
             'durasi' => $req->durasi,
-            'harga' => $req->harga_awal
+            'harga' => $req->harga_awal,
+            'min_bid' => $req->min_bid
         ]);
 
         $brg = Barang::where('special_token',$special_token)->first();

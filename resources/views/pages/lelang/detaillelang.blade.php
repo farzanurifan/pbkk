@@ -17,6 +17,7 @@
               <section style="width:100%; height: 300px; background-color: #f4f4f4">
                   <div class="w3-content w3-display-container" style="">
                     <img class="mySlides" src="{{asset($lelang->Barang->path)}}" style="padding-right: 32%;padding-left: 32%; height: 300px">
+                    
                   </div>
               </section>
               <hr>
@@ -39,7 +40,7 @@
                         </tr>
                         <tr>
                           <td><i class="fa fa-clone" aria-hidden="true"> Kategori Barang</i></td>
-                          <td>Doe Doe Doe Doe Doe Doe Doe Doe</td>
+                          <td>{{$lelang->Barang->TipeBarang[0]->tipe_barang}}</td>
                         </tr>
                         <tr>
                           <td><i class="  fa fa-balance-scale" aria-hidden="true"> Harga Awal</i></td>
@@ -59,24 +60,32 @@
                   </div>
               </div>
 
-              <div class="col-lg-3 col-md-6" style="background-color: #b5ffd6; padding: 15px; height: 300px">
+              <div class="col-lg-3 col-md-6 rightside-panel" style="background-color: #b5ffd6; padding: 15px; height: 300px">
                   <div class="member"  >
                     <div class="details">
                       <h4 style="font-size: 25px">Terdapat<br>43 Pelelang</h4>
                       <hr>
-                      <span style="font-size: 20px;color: red"><b>Rp. {{number_format($lelang->harga,2,',','.')}}</b></span>
+                      <span style="font-size: 20px;color: red"><b id="bid_harga_sekarang">Rp. {{number_format($lelang->harga,2,',','.')}}</b></span>
                       <span>Pelelang dengan penawaran harga tertinggi terakhir akan menjadi pembeli resmi</span>
                     </div>
                   </div>
 
-                  <a class="btn-get-started scrollto" style="color: #ffffff" href="#lelangBarangModal" data-toggle="modal">
-                  <div class="" style="background-color: #2e4ca5; height: 35px; border-radius: 3px; text-align: center; font-size: 16px; padding-top: 5px; margin-top: 10px">
-                    Lelang Barang
-                  </div>
-                  </a>
+                  @if(Auth::user()->id==$lelang->user_id)
+                      
+                  @else
+                      @if($lelang->penawar_id==Auth::user()->id)
+                          <label>Anda penawar tertinggi</label>
+                      @else
+                          <a id="button-tawar-barang" dataID="{{$lelang->id}}" dataIDP="{{Auth::user()->id}}" minbid="{{$lelang->min_bid}}" class="btn-get-started" style="color: #ffffff" href="#lelangBarangModal" data-toggle="modal">
+                              <div class="" style="background-color: #2e4ca5; height: 35px; border-radius: 3px; text-align: center; font-size: 16px; padding-top: 5px; margin-top: 10px">
+                                Tawar Barang
+                              </div>
+                          </a>
+                      @endif
+                  @endif
               </div>
           </div>
       </div>
-      @include('pages.lelang.lelang')
+      @include('pages.lelang.bidding')
   </section>
 @endsection

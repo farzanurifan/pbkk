@@ -16,24 +16,22 @@
                           <input type="text" class="form-control" name="nama_barang" id="nama_barang" placeholder="Masukkan nama barang">
                       </div>
                     </div>
-                </div>
-                 <div class="row">
                     <div class="col-md-3">
                       <div class="form-group">
                           <label for="kategorinya" class="control-label">Kategori</label>
                            <select type="text" class="form-control" name="tipe_barang" id="tipe_barang" placeholder="Masukkan kategori barang">
-                          <option value="volvo">Semua Kategori</option>
-                          <option value="volvo">Elektronik</option>
-                          <option value="volvo">Pria</option>
-                          <option value="volvo">Wanita</option>
-                          <option value="volvo">Buku</option>
-                          <option value="volvo">Furniture</option>
-                          <option value="volvo">Kendaraan</option>
+                                <option selected disabled>Semua Kategori</option>
+                                <option value="elektronik">Elektronik</option>
+                                <option value="pria">Pria</option>
+                                <option value="wanita">Wanita</option>
+                                <option value="buku">Buku</option>
+                                <option value="furniture">Furniture</option>
+                                <option value="kendaraan">Kendaraan</option>
                         </select>
                       </div>
                     </div>
-                  </div>
-                
+                </div>
+
                 <div class="row">
                     <div class="col-md-3">
                       <div class="form-group">
@@ -41,7 +39,15 @@
                           <input type="number" class="form-control" name="harga_awal" id="nama_barang" placeholder="Masukkan harga awal">
                       </div>
                     </div>
+                    
+                    <div class="col-md-3">
+                      <div class="form-group">
+                          <label for="harga_awal" class="control-label">Minimal Kenaikan Harga Tawaran</label>
+                          <input type="number" class="form-control" name="min_bid" id="nama_barang" placeholder="Masukkan harga">
+                      </div>
+                    </div>
                 </div>
+
                  <div class="row">
                     <div class="col-md-3">
                       <div class="form-group">

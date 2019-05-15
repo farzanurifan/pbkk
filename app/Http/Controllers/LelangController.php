@@ -47,4 +47,26 @@ class LelangController extends Controller
     		'message' => 'Status telah berhasil diubah'
     	]);
     }
+
+    public function updateHarga(Request $req)
+    {
+        $new_price = (float)$req->harga_new;
+        $min_bid = (float)$req->min_bid;
+        $harga_now = (float)$req->harga_now;
+
+        if ($new_price < $min_bid + $harga_now) {
+            return Response::json([
+                'message' => "Data tidak berubah. Harga yang anda masukkan tidak sesuai ketentuan."
+            ]);
+        }
+
+        Lelang::where('id',$req->id)->update([
+            'penawar_id' => $req->penawar_id,
+            'harga' => $req->harga_new
+        ]);
+
+        return Response::json([
+            'message' => "Data penawaran anda telah dimasukkan. Anda penawar tertinggi saat ini."
+        ]);
+    }
 }
