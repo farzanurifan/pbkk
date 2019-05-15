@@ -203,6 +203,10 @@
       <br>
       <b><p style="text-align: center"><a href="{{route('beranda')}}" class="btn btn-info">{{ __('Lihat Lebih') }}</a></p></b>
     </section>
+    <br>
+    <br>
+    <br>
+
 
     <!-- #portfolio -->
 

@@ -32,16 +32,14 @@ Route::middleware(['auth','verified'])->group(function(){
 	Route::post('/barangHapus','BarangController@delItems');
 	Route::get('/barang','BarangController@listItems')->name('barangs');
 	Route::get('/getAll','BarangController@getAll');
-//13may
+
 	Route::get('/detailbarang',function(){
 		return view('pages.barang.detailbarang');
 	})->name('barangs_detail');
 
-	/*
-	Route::get('/detailbarang/{id}', 'BarangController@getDetailBarang');
-	Route::post('/detailbarangs','BarangController@updateDetailBarang');
-	*/
-//
+	Route::get('/historipenawaran','LelangController@historipenawaran')->name('historipenawaran');
+
+
 	Route::get('/baranglelang/{id}', 'BarangController@getBarangLelang');
 	Route::get('/lelang/baranglelang/{id}', 'BarangController@getBarangLelang');
 	Route::post('/baranglelangs','BarangController@updateBarangLelang');
@@ -58,4 +56,5 @@ Route::middleware(['auth','verified'])->group(function(){
 
 Route::group(['middleware' => ['admin']], function() {
 	Route::get('/kelola-barang','AdminController@barang')->name('kelola_barang');
+	Route::get('/histori-penawaran','AdminController@barang')->name('histori_penawaran');
 });

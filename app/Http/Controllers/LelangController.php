@@ -31,6 +31,10 @@ class LelangController extends Controller
     	
     }
 
+    public function historipenawaran(){
+        return view('pages.lelang.historipenawaran');
+    }
+
     public function index()
     {
     	$lelangs = Lelang::orderBy('created_at','desc')->where('status','ON GOING')->get();

@@ -27,7 +27,7 @@
           <div class="row" style="padding-right: 120px; padding-left: 120px">          
               <div class="col-lg-9 content">
                   <div class="container">           
-                    <table class="table table-striped">
+                    <table class="table table-dark table-striped">
                       <thead>
                         <tr>
                           
@@ -60,10 +60,10 @@
                   </div>
               </div>
 
-              <div class="col-lg-3 col-md-6 rightside-panel" style="background-color: #b5ffd6; padding: 15px; height: 300px">
+              <div class="col-lg-3 col-md-6 rightside-panel">
                   <div class="member"  >
-                    <div class="details">
-                      <h4 style="font-size: 25px">Terdapat<br>43 Pelelang</h4>
+                    <div class="details" style="color: black">
+                      <h4 style="font-size: 25px">Terdapat<br><span style="color: red;font-size:25px ">43</span>Pelelang</h4>
                       <hr>
                       <span style="font-size: 20px;color: red"><b id="bid_harga_sekarang">Rp. {{number_format($lelang->harga,2,',','.')}}</b></span>
                       <span>Pelelang dengan penawaran harga tertinggi terakhir akan menjadi pembeli resmi</span>
@@ -74,7 +74,7 @@
                       
                   @else
                       @if($lelang->penawar_id==Auth::user()->id)
-                          <label>Anda penawar tertinggi</label>
+                          <b><label style="color: green">Anda penawar tertinggi</label><b>
                       @else
                           <a id="button-tawar-barang" dataID="{{$lelang->id}}" dataIDP="{{Auth::user()->id}}" minbid="{{$lelang->min_bid}}" class="btn-get-started" style="color: #ffffff" href="#lelangBarangModal" data-toggle="modal">
                               <div class="" style="background-color: #2e4ca5; height: 35px; border-radius: 3px; text-align: center; font-size: 16px; padding-top: 5px; margin-top: 10px">
@@ -88,4 +88,9 @@
       </div>
       @include('pages.lelang.bidding')
   </section>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
 @endsection

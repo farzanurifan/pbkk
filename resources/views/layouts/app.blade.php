@@ -119,7 +119,7 @@
     <!--==========================
         Footer
     ============================-->
-    <footer id="footer">
+    <footer id="footer" >
         <div class="container">
         <div class="copyright">
             &copy; Copyright <strong>ITS-LELANG</strong>. All Rights Reserved
