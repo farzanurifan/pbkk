@@ -23,6 +23,49 @@
 	   	var minbidnya;
 
 
+	   	//Croppie
+	   	$uploadCrop = $('#upload-demo').croppie({
+		    enableExif: true,
+		    viewport: {
+		        width: 200,
+		        height: 200,
+		        type: 'square'
+		    },
+		    boundary: {
+		        width: 300,
+		        height: 300
+		    }
+		});
+
+	   	$('#uploadProfile').on('change', function () { 
+			var reader = new FileReader();
+		    reader.onload = function (e) {
+		    	$uploadCrop.croppie('bind', {
+		    		url: e.target.result
+		    	}).then(function(){
+		    		print('jQuery bind complete');
+		    	});
+		    }
+		    reader.readAsDataURL(this.files[0]);
+		});
+
+		$('.upload-result').on('click', function (ev) {
+			$uploadCrop.croppie('result', {
+				type: 'canvas',
+				size: 'viewport'
+			}).then(function(resp) {
+				$.post('updatepp',{_token:csrf_,image:resp},function(response){
+					
+				}).done(function(response){
+					alert("Sukses");
+				}).fail(function(response){
+					print(response);
+				});
+			});
+		});
+
+	   	//Croppie
+
 	   	$('#input-bid-barang-harga-baru').keyup(function(){
 	   		print(parseFloat( price_now ) + parseFloat( price_min ));
 	   		if ( parseFloat( $('#input-bid-barang-harga-baru').val() ) < parseFloat( price_now ) + parseFloat( price_min )) {

@@ -27,8 +27,10 @@
     <!-- Main Stylesheet File -->
     <link href={{asset("templates/css/style.css")}} rel="stylesheet">
     <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('croppie/croppie.css')}}">
     
     <script src={{asset("//code.jquery.com/jquery-1.11.1.min.js")}}></script>
+
     <!-- =======================================================
         Theme Name: Reveal
         Theme URL: https://bootstrapmade.com/reveal-bootstrap-corporate-template/
@@ -73,10 +75,12 @@
                                 {{ Auth::user()->name }} <span class="caret"></span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <h6 class="dropdown-header" style="padding-top: 5px;padding-left: 5px;">Akun</h6>
                                 <a class="dropdown-item" href="{{ route('profile') }}">
                                     {{ __('Kelola Akun') }}
                                 </a>
-                                <br>
+                                <hr>
+                                <h6 class="dropdown-header" style="padding-top: 5px;padding-left: 5px;">Barang</h6>
                                 @if (Auth::user()->is_admin)
                                     <a class="dropdown-item" href="{{ route('kelola_barang') }}">
                                         {{ __('Kelola Barang') }}
@@ -85,8 +89,10 @@
                                     <a class="dropdown-item" href="{{ route('barangs') }}">
                                         {{ __('Kelola Barang') }}
                                     </a>
+                                    <br>
+                                    <a class="dropdown-item" href="{{route('historipenawaran')}}">{{__('Penawaran')}}</a>
                                 @endif
-                                <br>
+                                <hr>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
                                                 document.getElementById('logout-form').submit();">
@@ -149,6 +155,7 @@
     <script src={{asset("templates/js/main.js")}}></script>
     <script src={{asset("https://code.jquery.com/jquery-3.4.1.js")}} integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+    <script src="{{asset('croppie/croppie.js')}}"></script>
     @include('scripts.script')
     </body>
 </html>

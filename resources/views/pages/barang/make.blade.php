@@ -30,6 +30,12 @@
                         </select>
                       </div>
                     </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                          <label for="gambarnya">Gambar</label>
+                          <input type="file" name="path" class="form-control-file" id="gambarnya">
+                      </div>
+                    </div>
                 </div>
 
                 <div class="row">
@@ -46,9 +52,7 @@
                           <input type="number" class="form-control" name="min_bid" id="nama_barang" placeholder="Masukkan harga">
                       </div>
                     </div>
-                </div>
 
-                 <div class="row">
                     <div class="col-md-3">
                       <div class="form-group">
                           <label for="durasi" class="control-label">Durasi Lelang</label>
@@ -57,23 +61,23 @@
                     </div>
                     <div class="col-md-3">
                       <div class="form-group">
-                          <label for="gambarnya">Gambar</label>
-                          <input type="file" name="path" class="form-control-file" id="gambarnya">
+                          <label for="durasi" class="control-label" style="color: #EEEEEE;">Submit</label>
+                          <input type="submit" class="btn btn-success form-control" value="Submit">
                       </div>
                     </div>
-                  </div>
-                
+                </div>
 
-                   <div class="row">
-                    <div class="col-md-3">
+                <div class="row">
+                    <div class="col-md-6">
                       <div class="form-group">
                         <label for="comment">Keterangan Barang</label>
                         <textarea class="form-control" rows="3"  id="comment" name="keterangan_barang"></textarea>
                       </div>
                     </div>
-                      <div class="col-md-3">
-                          <input type="submit" class="btn btn-success" value="Submit">
-                      </div>
+                </div>
+
+                <div class="row">
+                  
                 </div>
             </form>
         </div>

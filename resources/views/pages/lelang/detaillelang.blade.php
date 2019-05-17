@@ -47,8 +47,12 @@
                           <td>Rp. {{number_format($lelang->Barang->harga_awal,2,',','.')}}</td>
                         </tr>
                         <tr>
-                          <td><i class="  fa fa-hourglass-3" aria-hidden="true"> Durasi Lelang</i></td>
+                          <td><i class="fa fa-hourglass-3" aria-hidden="true"> Durasi Lelang</i></td>
                           <td>{{$lelang->durasi}} hari</td>
+                        </tr>
+                        <tr>
+                          <td><i class="fa fa-user" aria-hidden="true"> Di Unggah Oleh</i></td>
+                          <td>{{$lelang->User->name}}</td>
                         </tr>
                       </tbody>
                     </table>
@@ -63,7 +67,7 @@
               <div class="col-lg-3 col-md-6 rightside-panel">
                   <div class="member"  >
                     <div class="details" style="color: black">
-                      <h4 style="font-size: 25px">Terdapat<br><span style="color: red;font-size:25px ">43</span>Pelelang</h4>
+                      <h4 style="font-size: 25px">Terdapat<br><span style="color: red;font-size:25px ">{{$counter}}</span>Pelelang</h4>
                       <hr>
                       <span style="font-size: 20px;color: red"><b id="bid_harga_sekarang">Rp. {{number_format($lelang->harga,2,',','.')}}</b></span>
                       <span>Pelelang dengan penawaran harga tertinggi terakhir akan menjadi pembeli resmi</span>

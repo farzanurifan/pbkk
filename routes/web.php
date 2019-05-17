@@ -37,7 +37,7 @@ Route::middleware(['auth','verified'])->group(function(){
 		return view('pages.barang.detailbarang');
 	})->name('barangs_detail');
 
-	Route::get('/historipenawaran','LelangController@historipenawaran')->name('historipenawaran');
+	Route::get('/historipenawaran','HistoriPenawaranController@index')->name('historipenawaran');
 
 
 	Route::get('/baranglelang/{id}', 'BarangController@getBarangLelang');
@@ -45,6 +45,10 @@ Route::middleware(['auth','verified'])->group(function(){
 	Route::post('/baranglelangs','BarangController@updateBarangLelang');
 
 	Route::get('/profile', 'HomeController@profile')->name('profile');
+	Route::get('/testprofile',function(){
+		return view('testprofile');
+	});
+	Route::post('/updatepp','HomeController@updatepp');
 	Route::post('/editprofile', 'HomeController@store');
 
 	Route::get('/make','LelangController@make')->name('make');

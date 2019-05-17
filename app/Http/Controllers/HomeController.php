@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use Response;
+use Image;
 
 class HomeController extends Controller
 {
@@ -53,5 +54,19 @@ class HomeController extends Controller
             'response' => "Data berhasil disimpan",
             'data' => $user
         ]);
+    }
+
+    public function updatepp(Request $request)
+    {
+        $data = $request->image;
+        list($type, $data) = explode(';', $data);
+        list(, $data)      = explode(',', $data);
+        $img = Image::make($data);
+        $filename=time().".".'jpg';
+        $img->save(public_path('/img/uploads/profile/'.$filename));
+        $data = base64_decode($data);
+        $image_name= time().'.jpg';
+        $path = public_path() . "/img/uploads/" . $image_name;
+        file_put_contents($path, $data);
     }
 }

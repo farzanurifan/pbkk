@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Barang;
 use App\Lelang;
 use App\TipeBarang;
+use App\HistoriPenawaran;
 use DB;
 use Auth;
 use Image;
@@ -47,6 +48,8 @@ class BarangController extends Controller
         $item = Barang::where('id',$req->id);
         $lels = Lelang::where('barang_id',$req->id);
         $type = TipeBarang::where('barang_id',$req->id);
+        $historitawar = HistoriPenawaran::where('barang_id',$req->id);
+        $historitawar->delete();
         $type->delete();
         $lels->delete();
         $item->delete();

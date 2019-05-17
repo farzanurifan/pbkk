@@ -13,9 +13,9 @@
     <div class="container-fluid">
       <div class="row no-gutters">
         
-        <table width="100%" class="table-bordered">
-          <thead>
-            <tr>
+        <table width="100%" class="table table-hover">
+          <thead class="thead-light">
+            
               <th width="10%"></th>
               <th style="text-align: center" width="20%">Nama Barang</th>
               <th style="text-align: center" width="10%">Harga awal</th>
@@ -23,13 +23,13 @@
               <th style="text-align: center" width="10%">Durasi Lelang</th>
               <th style="text-align: center" width="20%">Keterangan</th><br>
               <th></th>
-            </tr>
+            
           </thead>
           <tbody>
           @foreach($barangs as $barang)
             <tr id="barang{{$barang->id}}">
               <td style="text-align: center"><img src="{{asset($barang->path)}}" alt="" style="height: 50px;width: 50px;"></td>
-              <td style="text-align: left" id="brgnama{{$barang->id}}">{{$barang->nama_barang}}</td>
+              <td style="text-align: center;" id="brgnama{{$barang->id}}"><a href="{{URL::to('/lelang').'/'.$barang->Lelang->id}}">{{$barang->nama_barang}}</a></td>
               <td style="text-align: center" id="brgharga{{$barang->id}}">Rp. {{number_format($barang->harga_awal,2,',','.')}}</td>
               <td style="text-align: center" >
                 @if($barang->Lelang->status == "INACTIVE")

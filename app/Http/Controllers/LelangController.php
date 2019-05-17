@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Lelang;
+use App\HistoriPenawaran;
 use Response;
 
 class LelangController extends Controller
@@ -11,7 +12,9 @@ class LelangController extends Controller
     public function detail($id)
     {
         $lelang = Lelang::where('id',$id)->first();
-        return view('pages.lelang.detaillelang',compact('lelang'));
+        $counter = HistoriPenawaran::where('lelang_id',$id)->get();
+        $counter = count($counter);
+        return view('pages.lelang.detaillelang',compact('lelang','counter'));
     }
 
     public function allLelang()
@@ -68,6 +71,14 @@ class LelangController extends Controller
             'penawar_id' => $req->penawar_id,
             'harga' => $req->harga_new
         ]);
+
+        $checker = HistoriPenawaran::where('user_id',$req->penawar_id)->where('lelang_id',$req->id)->get();
+        if (count($checker)<1) {
+            HistoriPenawaran::create([
+                'user_id' => $req->penawar_id,
+                'lelang_id' => $req->id
+            ]);
+        }
 
         return Response::json([
             'message' => "Data penawaran anda telah dimasukkan. Anda penawar tertinggi saat ini."
