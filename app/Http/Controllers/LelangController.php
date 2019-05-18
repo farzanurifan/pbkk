@@ -23,7 +23,7 @@ class LelangController extends Controller
         return view('pages.lelang.allLelang',compact('lelangs'));
     }
 
-    public function kategori()
+    public function kategori($kategori)
     {
         $lelangs = Lelang::orderBy('created_at','desc')->where('status','ON GOING')->get();
         return view('pages.lelang.kategori',compact('lelangs'));
