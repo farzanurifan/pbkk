@@ -28,6 +28,6 @@ class CreateVcashesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('vcashes');
+        Schema::dropIfExists('vcashs');
     }
 }
