@@ -13,8 +13,8 @@
     <div class="container-fluid">
       <div class="row no-gutters">
         
-        <table width="100%" class="table table-hover">
-          <thead class="thead-light">
+        <table width="100%" class="table table-hover table-striped table-dark">
+          <thead>
             <tr>
               <th width="10%"></th>
               <th style="text-align: center" width="30%">Nama Barang</th>
@@ -58,9 +58,7 @@
     </div>
     
     </section>
-    <br>
-    <br>
-    <br>
+
 
     <!-- #portfolio -->
 

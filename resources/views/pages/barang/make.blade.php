@@ -59,12 +59,6 @@
                           <input type="number" class="form-control" name="durasi" id="durasi" placeholder="Masukkan durasi lelang (hari)">
                       </div>
                     </div>
-                    <div class="col-md-3">
-                      <div class="form-group">
-                          <label for="durasi" class="control-label" style="color: #EEEEEE;">Submit</label>
-                          <input type="submit" class="btn btn-success form-control" value="Submit">
-                      </div>
-                    </div>
                 </div>
 
                 <div class="row">
@@ -74,9 +68,12 @@
                         <textarea class="form-control" rows="3"  id="comment" name="keterangan_barang"></textarea>
                       </div>
                     </div>
-                </div>
-
-                <div class="row">
+                <div class="col-md-3">
+                      <div class="form-group">
+                          <label for="durasi" class="control-label" style="color: #EEEEEE;">Submit</label>
+                          <input type="submit" class="btn btn-success form-control" value="Submit">
+                      </div>
+                    </div>
                   
                 </div>
             </form>

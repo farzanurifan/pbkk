@@ -148,8 +148,6 @@
     
         </div>
         </section><!-- #portfolio -->
-    <br>
-    <br>
-    <br>
+
 
 @endsection

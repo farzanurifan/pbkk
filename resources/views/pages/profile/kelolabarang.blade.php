@@ -13,13 +13,13 @@
     <div class="container-fluid">
       <div class="row no-gutters">
         
-        <table width="100%" class="table table-hover">
-          <thead class="thead-light">
+        <table width="100%" class="table table-hover table-striped table-dark">
+          <thead>
             
               <th width="10%"></th>
               <th style="text-align: center" width="20%">Nama Barang</th>
-              <th style="text-align: center" width="10%">Harga awal</th>
-              <th style="text-align: center" width="15%">Status Barang</th>
+              <th style="text-align: center" width="15%">Harga awal</th>
+              <th style="text-align: center" width="10%">Status Barang</th>
               <th style="text-align: center" width="10%">Durasi Lelang</th>
               <th style="text-align: center" width="20%">Keterangan</th><br>
               <th></th>
@@ -55,9 +55,6 @@
     @include('pages.barang.edit')
     @include('pages.barang.delete')
     </section>
-    <br>
-    <br>
-    <br>
 
     <!-- #portfolio -->
 

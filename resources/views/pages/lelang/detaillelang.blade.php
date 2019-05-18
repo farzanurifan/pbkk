@@ -92,9 +92,5 @@
       </div>
       @include('pages.lelang.bidding')
   </section>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
+
 @endsection
