@@ -96,9 +96,20 @@
   <script type="text/javascript">
     var clock;
 
+    var lelang = {!! json_encode($lelang->toArray()) !!};
+    var durasi = lelang.durasi
+    var currentDate = new Date();
+    var tanggalBerakhir = new Date(lelang.created_at);
+    tanggalBerakhir.setDate(tanggalBerakhir.getDate() + durasi);
+
+    var diff = tanggalBerakhir.getTime() / 1000 - currentDate.getTime() / 1000;
+
+    if (diff <= 0){
+      diff = 0;
+    }
+    
     $(document).ready(function() {      
-      var durasi = 172800// dalam detik
-      clock = $('.clock').FlipClock(durasi, {
+      clock = $('.clock').FlipClock(diff, {
         countdown: true,
         clockFace: 'DailyCounter'
       });
