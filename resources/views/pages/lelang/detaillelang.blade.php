@@ -48,7 +48,7 @@
                         </tr>
                         <tr>
                           <td><i class="fa fa-hourglass-3" aria-hidden="true"> Durasi Lelang</i></td>
-                          <td>{{$lelang->durasi}} hari</td>
+                          <td><div class="clock"></div>{{$lelang->durasi}} hari</td>
                         </tr>
                         <tr>
                           <td><i class="fa fa-user" aria-hidden="true"> Di Unggah Oleh</i></td>
@@ -92,5 +92,17 @@
       </div>
       @include('pages.lelang.bidding')
   </section>
+
+  <script type="text/javascript">
+    var clock;
+
+    $(document).ready(function() {      
+      var durasi = 172800// dalam detik
+      clock = $('.clock').FlipClock(durasi, {
+        countdown: true,
+        clockFace: 'DailyCounter'
+      });
+    });
+  </script>
 
 @endsection
