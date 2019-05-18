@@ -29,12 +29,6 @@ class HomeController extends Controller
         return view('home');
     }
 
-    public function kategori()
-    {
-        return view('pages.kategori');
-    }
-
-
     public function profile()
     {
         return view('pages.profile.index');

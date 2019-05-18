@@ -5,12 +5,7 @@
       Rekomendasi Barang Section
     ============================-->
     <section id="portfolio" class="wow fadeInUp"style="background-color:#EEEEEE">
-        <div class="container">
-            <div class="section-header">
-            <h2 style="text-align: center;">Barang Pelelangan</h2>
-            </div>
-        </div>
-    
+      @include('pages.lelang.searchkategori')
         <div class="container-fluid">
             <div class="row no-gutters">
                 @foreach($lelangs as $lelang)
@@ -29,12 +24,9 @@
                   </div>
                 </div>
                 @endforeach
-    
-           
-    
             </div>
-    
         </div>
-        </section><!-- #portfolio -->
+    </section><!-- #portfolio -->
+
 
 @endsection

@@ -39,7 +39,22 @@ class BarangController extends Controller
     	$title = $req->searchbar;
     	$count = count($lelangs);
     	
-    	return view('pages.lelang.searchRes',compact('lelangs','title','count'));
+    	return view('pages.lelang.kategori',compact('lelangs','title','count'));
+    }
+
+    public function searchKategori(Request $req)
+    {
+        $lelangs = TipeBarang::where('tipe_barang','like',"%".$req->selectopt."%")->orderBy('created_at','desc')->get();
+        foreach ($lelangs as $lelang) {
+            $temp = $lelang->Lelang()->first();
+            if ($temp->status != "ON GOING") {
+                unset($lelang);
+            }
+        }
+        $title = $req->selectopt;
+        $count = count($lelangs);
+        
+        return view('pages.lelang.searchRes',compact('lelangs','title','count'));
     }
 
     public function delItems(Request $req)
