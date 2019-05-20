@@ -13,6 +13,10 @@ class LelangController extends Controller
     public function detail($id)
     {
         $lelang = Lelang::where('id',$id)->first();
+        if ($lelang->status=="INACTIVE" or $lelang->status=="ENDED") {
+            $lelangs = Lelang::orderBy('created_at','desc')->where('status','ON GOING')->get();
+            return view('pages.lelang.allLelang',compact('lelangs'));
+        }
         $counter = HistoriPenawaran::where('lelang_id',$id)->get();
         $counter = count($counter);
         return view('pages.lelang.detaillelang',compact('lelang','counter'));
