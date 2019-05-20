@@ -48,7 +48,7 @@
                         </tr>
                         <tr>
                           <td><i class="fa fa-hourglass-3" aria-hidden="true"> Durasi Lelang</i></td>
-                          <td>{{$lelang->durasi}} hari</td>
+                          <td><div class="clock"></div>{{$lelang->durasi}} hari</td>
                         </tr>
                         <tr>
                           <td><i class="fa fa-user" aria-hidden="true"> Di Unggah Oleh</i></td>
@@ -92,5 +92,28 @@
       </div>
       @include('pages.lelang.bidding')
   </section>
+
+  <script type="text/javascript">
+    var clock;
+
+    var lelang = {!! json_encode($lelang->toArray()) !!};
+    var durasi = lelang.durasi
+    var currentDate = new Date();
+    var tanggalBerakhir = new Date(lelang.created_at);
+    tanggalBerakhir.setDate(tanggalBerakhir.getDate() + durasi);
+
+    var diff = tanggalBerakhir.getTime() / 1000 - currentDate.getTime() / 1000;
+
+    if (diff <= 0){
+      diff = 0;
+    }
+    
+    $(document).ready(function() {      
+      clock = $('.clock').FlipClock(diff, {
+        countdown: true,
+        clockFace: 'DailyCounter'
+      });
+    });
+  </script>
 
 @endsection

@@ -23,6 +23,7 @@
     <link href={{asset("templates/lib/owlcarousel/assets/owl.carousel.min.css")}} rel="stylesheet">
     <link href={{asset("templates/lib/magnific-popup/magnific-popup.css")}} rel="stylesheet">
     <link href={{asset("templates/lib/ionicons/css/ionicons.min.css")}} rel="stylesheet">
+    <link href={{asset("css/flipclock.css")}} rel="stylesheet">
 
     <!-- Main Stylesheet File -->
     <link href={{asset("templates/css/style.css")}} rel="stylesheet">
@@ -156,6 +157,7 @@
     <script src={{asset("https://code.jquery.com/jquery-3.4.1.js")}} integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
     <script src="{{asset('croppie/croppie.js')}}"></script>
+    <script src={{asset("js/flipclock.js")}}></script>
     @include('scripts.script')
     </body>
 </html>
