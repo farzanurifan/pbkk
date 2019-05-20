@@ -7,7 +7,7 @@
     <section id="portfolio" class="wow fadeInUp"style="background-color:#EEEEEE">
       @include('pages.lelang.searchkategori')
         <div class="container-fluid">
-            <div class="row no-gutters">
+            <div class="row no-gutters all-kat-brg">
                 @foreach($lelangs as $lelang)
                 <div class="col-lg-3 col-md-3" style="padding: 10px">
                   <div class="portfolio-item wow fadeInUp">

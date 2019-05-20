@@ -33,11 +33,15 @@
               <td style="text-align: center;">
                 @if($histori->Lelang->penawar_id == Auth::user()->id && $histori->Lelang->status == "ON GOING")
                   <p>Penawaran anda tertinggi saat ini.</p>
+                @elseif($histori->Lelang->penawar_id == Auth::user()->id && $histori->Lelang->status == "INACTIVE")
+                  <p>Penawaran anda tertinggi saat ini.</p>
                 @elseif($histori->Lelang->penawar_id == Auth::user()->id && $histori->Lelang->status == "ENDED")
                   <p>Anda memenangkan pelelangan item {{$histori->Lelang->Barang->nama_barang}}.</p>
                 @elseif($histori->Lelang->penawar_id != Auth::user()->id && $histori->Lelang->status == "ENDED")
                   <p>User lain memenangkan lelang item {{$histori->Lelang->Barang->nama_barang}}</p>
-                @else
+                @elseif($histori->Lelang->penawar_id != Auth::user()->id && $histori->Lelang->status == "INACTIVE")
+                  <p>User lain memegang penawaran tertinggi.</p>
+                @elseif($histori->Lelang->penawar_id != Auth::user()->id && $histori->Lelang->status == "ON GOING")
                   <p>User lain memegang penawaran tertinggi.</p>
                 @endif
               </td>

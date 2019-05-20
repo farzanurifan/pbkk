@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Lelang;
 use App\HistoriPenawaran;
+use App\TipeBarang;
 use Response;
 
 class LelangController extends Controller
@@ -23,10 +24,27 @@ class LelangController extends Controller
         return view('pages.lelang.allLelang',compact('lelangs'));
     }
 
-    public function kategori($kategori)
+    public function searchByKategori($id)
+    {
+        $lelangs = Lelang::whereHas('Barang',function($query) use($id){
+            $query->where('tipebarang_id',$id);
+        })->where('status','ON GOING')->orderBy('created_at','desc')->get();
+
+        foreach ($lelangs as $lelang) {
+            $barang = $lelang->Barang()->first();
+            $lelang->{'path'} = $barang->path;
+            $lelang->{'nama_barang'} = $barang->nama_barang;
+        }
+        return Response::json([
+            'lelang' => $lelangs
+        ]);
+    }
+
+    public function kategori()
     {
         $lelangs = Lelang::orderBy('created_at','desc')->where('status','ON GOING')->get();
-        return view('pages.lelang.kategori',compact('lelangs'));
+        $tipebarangs = TipeBarang::all();
+        return view('pages.lelang.kategori',compact('lelangs','tipebarangs'));
     }
 
     public function make()

@@ -29,13 +29,9 @@ class BarangController extends Controller
 
     public function search(Request $req)
     {
-    	$lelangs = Barang::where('nama_barang','like',"%".$req->searchbar."%")->orderBy('created_at','desc')->get();
-        foreach ($lelangs as $lelang) {
-            $temp = $lelang->Lelang()->first();
-            if ($temp->status != "ON GOING") {
-                unset($lelang);
-            }
-        }
+        $lelangs = Barang::whereHas('Lelang',function($query){
+            $query->where('status','ON GOING');
+        })->where('nama_barang','like',"%".$req->searchbar."%")->orderBy('created_at','desc')->get();
     	$title = $req->searchbar;
     	$count = count($lelangs);
     	
@@ -62,10 +58,8 @@ class BarangController extends Controller
         $filenya = Barang::where('id',$req->id)->first();
         $item = Barang::where('id',$req->id);
         $lels = Lelang::where('barang_id',$req->id);
-        $type = TipeBarang::where('barang_id',$req->id);
         $historitawar = HistoriPenawaran::where('lelang_id',$req->id);
         $historitawar->delete();
-        $type->delete();
         $lels->delete();
         $item->delete();
 
@@ -77,7 +71,8 @@ class BarangController extends Controller
 
     public function addItems()
     {
-        return view('pages.barang.make');
+        $tipebarangs = TipeBarang::all();
+        return view('pages.barang.make',compact('tipebarangs'));
     }
 //13may
     /*
@@ -115,7 +110,8 @@ class BarangController extends Controller
             'harga_awal' => $req->harga_awal,
             'path' => '/img/uploads/resources/'.$filename,
             'special_token' => $uniq_token,
-            'keterangan_barang' => $req->keterangan_barang
+            'keterangan_barang' => $req->keterangan_barang,
+            'tipebarang_id' => $req->tipe_barang
         ]);
 
         $brg = Barang::where('special_token',$uniq_token)->first();
@@ -126,10 +122,6 @@ class BarangController extends Controller
             'status' => 'INACTIVE',
             'durasi' => $req->durasi,
             'min_bid' => $req->min_bid
-        ]);
-        TipeBarang::create([
-            'barang_id' => $brg->id,
-            'tipe_barang' => $req->tipe_barang
         ]);
 
         return redirect('/barang');
@@ -152,6 +144,7 @@ class BarangController extends Controller
         Barang::where('id',$req->id_barang)->update([
             'nama_barang' => $req->nama_barang,
             'harga_awal' => $req->harga_awal,
+            'keterangan_barang' => $req->keterangan_barang,
             'special_token' => $special_token
         ]);
 

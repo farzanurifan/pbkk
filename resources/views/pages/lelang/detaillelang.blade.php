@@ -23,7 +23,7 @@
               <hr>
               <br>
           </div>
-
+          <div class="clock"></div>
           <div class="row" style="padding-right: 120px; padding-left: 120px">          
               <div class="col-lg-9 content">
                   <div class="container">           
@@ -40,7 +40,7 @@
                         </tr>
                         <tr>
                           <td><i class="fa fa-clone" aria-hidden="true"> Kategori Barang</i></td>
-                          <td>{{$lelang->Barang->TipeBarang[0]->tipe_barang}}</td>
+                          <td>{{$lelang->Barang->TipeBarang->tipe_barang}}</td>
                         </tr>
                         <tr>
                           <td><i class="  fa fa-balance-scale" aria-hidden="true"> Harga Awal</i></td>
@@ -48,7 +48,7 @@
                         </tr>
                         <tr>
                           <td><i class="fa fa-hourglass-3" aria-hidden="true"> Durasi Lelang</i></td>
-                          <td><div class="clock"></div>{{$lelang->durasi}} hari</td>
+                          <td>{{$lelang->durasi}} hari</td>
                         </tr>
                         <tr>
                           <td><i class="fa fa-user" aria-hidden="true"> Di Unggah Oleh</i></td>

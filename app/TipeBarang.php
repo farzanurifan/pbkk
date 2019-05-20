@@ -7,10 +7,10 @@ use Illuminate\Database\Eloquent\Model;
   class TipeBarang extends Model
 {
 	protected $fillable = [
-		'barang_id','tipe_barang'
+		'tipe_barang'
 	];
 
 	public function Barang(){
-    	return $this->belongsTo('App\Barang');
+    	return $this->hasMany('App\Barang');
    	}
 }

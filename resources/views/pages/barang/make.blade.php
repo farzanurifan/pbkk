@@ -20,13 +20,10 @@
                       <div class="form-group">
                           <label for="kategorinya" class="control-label">Kategori</label>
                            <select type="text" class="form-control" name="tipe_barang" id="tipe_barang" placeholder="Masukkan kategori barang">
-                                <option selected disabled>Semua Kategori</option>
-                                <option value="elektronik">Elektronik</option>
-                                <option value="pria">Pria</option>
-                                <option value="wanita">Wanita</option>
-                                <option value="buku">Buku</option>
-                                <option value="furniture">Furniture</option>
-                                <option value="kendaraan">Kendaraan</option>
+                                <option selected disabled>Pilih Kategori</option>
+                                @foreach($tipebarangs as $tipebarang)
+                                <option value="{{$tipebarang->id}}">{{$tipebarang->tipe_barang}}</option>
+                                @endforeach
                         </select>
                       </div>
                     </div>
