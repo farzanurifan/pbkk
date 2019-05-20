@@ -8,7 +8,7 @@
           </div>
           
           <div>
-            <input type="submit" id="searchbar-btn" class="btn-get-started scrollto" value="Cari">
+            <input type="submit" id="searchbar-btn" class="btn btn-info" value="Cari">
           </div>
         </form>
       </div>

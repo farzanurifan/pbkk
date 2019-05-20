@@ -39,7 +39,7 @@ class BarangController extends Controller
     	$title = $req->searchbar;
     	$count = count($lelangs);
     	
-    	return view('pages.lelang.kategori',compact('lelangs','title','count'));
+    	return view('pages.lelang.searchRes',compact('lelangs','title','count'));
     }
 
     public function searchKategori(Request $req)
@@ -54,7 +54,7 @@ class BarangController extends Controller
         $title = $req->selectopt;
         $count = count($lelangs);
         
-        return view('pages.lelang.searchRes',compact('lelangs','title','count'));
+        return view('pages.lelang.kategori',compact('lelangs','title','count'));
     }
 
     public function delItems(Request $req)
@@ -63,7 +63,7 @@ class BarangController extends Controller
         $item = Barang::where('id',$req->id);
         $lels = Lelang::where('barang_id',$req->id);
         $type = TipeBarang::where('barang_id',$req->id);
-        $historitawar = HistoriPenawaran::where('barang_id',$req->id);
+        $historitawar = HistoriPenawaran::where('lelang_id',$req->id);
         $historitawar->delete();
         $type->delete();
         $lels->delete();
