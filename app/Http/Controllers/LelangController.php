@@ -7,9 +7,68 @@ use App\Lelang;
 use App\HistoriPenawaran;
 use App\TipeBarang;
 use Response;
+use Auth;
+use Image;
 
 class LelangController extends Controller
 {
+    public function changeStatusBeli(Request $req)
+    {
+        Lelang::where('id',$req->id)->update([
+            'status_transaksi' => 'NOT PAID'
+        ]);
+
+        return Response::json([
+            'message' => "Pembelian dilakukan. Silakan unggah bukti pembayaran pada laman Transaksi Beli."
+        ]);
+    }
+
+    public function beliShow()
+    {
+        $lelangs = Lelang::where('penawar_id',Auth::user()->id)->orderBy('updated_at','desc')->get();
+        return view('pages.profile.beli',compact('lelangs'));
+    }
+
+    public function jualShow()
+    {
+        $lelangs = Lelang::where('user_id',Auth::user()->id)->orderBy('updated_at','desc')->get();
+        return view('pages.profile.jual',compact('lelangs'));   
+    }
+
+    public function beli(Request $req)
+    {
+        if($req->hasFile('path')){
+            $foto=$req->file('path');
+            $filename=time().".".$foto->getClientOriginalExtension();
+        }
+        else{
+            $filename="None";
+        }
+
+        if($req->hasFile('path')){
+            $img=Image::make($foto->getRealPath());
+            
+            $img->save(public_path('/img/uploads/resources/payment/'.$filename));
+        }
+
+        Lelang::where('id',$req->id)->update([
+            'path' => '/img/uploads/resources/payment/'.$filename
+        ]);
+
+        return redirect('/beli');
+    }
+
+    public function jual(Request $req)
+    {
+        Lelang::where('id',$req->id)->update([
+            'status_transaksi' => 'PAID'
+        ]);
+
+        return Response::json([
+            'message' => 'Status telah berhasil diubah.'
+        ]);
+    }
+
     public function detail($id)
     {
         $lelang = Lelang::where('id',$id)->first();

@@ -74,7 +74,12 @@
                         </li>
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->name }} <span class="caret"></span>
+                                @if(Auth::user()->path=="")
+                                    {{ Auth::user()->name }}
+                                @else
+                                    <img src="{{asset(Auth::user()->path)}}" style="height: 40px;width: 40px;">
+                                @endif
+                                <span class="caret"></span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <h6 class="dropdown-header" style="padding-top: 5px;padding-left: 5px;">Akun</h6>
@@ -94,6 +99,13 @@
                                     <br>
                                     <a class="dropdown-item" href="{{route('historipenawaran')}}">{{__('Penawaran')}}</a>
                                 @endif
+                                <hr>
+                                <h6 class="dropdown-header" style="padding-top: 5px;padding-left: 5px;">Transaksi</h6>
+                                <a class="dropdown-item" href="{{ route('kelola_barang_beli') }}">
+                                        {{ __('Beli Barang') }}</a>
+                                <br>
+                                <a class="dropdown-item" href="{{ route('kelola_barang_jual') }}">
+                                        {{ __('Jual Barang') }}</a>
                                 <hr>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();

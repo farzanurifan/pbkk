@@ -24,6 +24,8 @@ class CreateLelangsTable extends Migration
             $table->string('status');
             $table->string('min_bid');
             $table->integer('durasi')->nullable();
+            $table->string('path')->nullable();
+            $table->string('status_transaksi')->nullable();
             $table->timestamps();
         });
     }

@@ -58,9 +58,14 @@ class HomeController extends Controller
         $img = Image::make($data);
         $filename=time().".".'jpg';
         $img->save(public_path('/img/uploads/profile/'.$filename));
-        $data = base64_decode($data);
-        $image_name= time().'.jpg';
-        $path = public_path() . "/img/uploads/" . $image_name;
-        file_put_contents($path, $data);
+        User::where('id',$request->id)->update(['path' => '/img/uploads/profile/'.$filename]);
+        // $data = base64_decode($data);
+        // $image_name= time().'.jpg';
+        // $path = public_path() . "/img/uploads/" . $image_name;
+        // file_put_contents($path, $data);
+
+        return Response::json([
+            'message' => "Foto profil sukses diubah."
+        ]);
     }
 }

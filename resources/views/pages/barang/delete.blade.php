@@ -11,7 +11,7 @@
 					<p class="text-danger text-del-response-barang"></p>
 				</div>
 				<div class="modal-footer">
-					<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+					<input type="button" class="btn btn-default button-del-barang-cancel" data-dismiss="modal" value="Cancel">
 					<input type="submit" class="btn btn-danger button-del-barang" value="Delete">
 				</div>
 			</div>

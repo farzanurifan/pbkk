@@ -26,7 +26,7 @@
 				</div>
 				<div class="modal-footer">
 					<input type="button" class="btn btn-default button-bid-cancel" data-dismiss="modal" value="Cancel">
-					<input type="submit" class="btn btn-info button-bid-barang" value="Save" disabled>
+					<input type="submit" class="btn btn-info button-bid-barang" value="Tawar" disabled>
 				</div>
 			</div>
 		</div>

@@ -22,6 +22,8 @@
 	   	var id_lelang;
 	   	var id_bidder;
 	   	var minbidnya;
+	   	var id_beli;
+	   	var id_jual;
 
 
 	   	//Croppie
@@ -40,6 +42,7 @@
 
 	   	$('#id-kat-brg').change(function(){
 	   		idkat = $('#id-kat-brg').val();
+	   		$('#profilepp_response_msg').hide();
 	   		print(idkat);
 	   		print(public_path);
 	   		$.get('searchByKat/'+idkat,function(response){
@@ -84,10 +87,12 @@
 				type: 'canvas',
 				size: 'viewport'
 			}).then(function(resp) {
-				$.post('updatepp',{_token:csrf_,image:resp},function(response){
+				$.post('updatepp',{_token:csrf_,image:resp,id:$('#profile_id').val()},function(response){
 					
 				}).done(function(response){
 					alert("Sukses");
+					$('#profilepp_response_msg').text(response.message);
+					$('#profilepp_response_msg').show();
 				}).fail(function(response){
 					print(response);
 				});
@@ -96,6 +101,7 @@
 
 	   	//Croppie
 
+	   	//Checker harga yang diperbolehkan
 	   	$('#input-bid-barang-harga-baru').keyup(function(){
 	   		print(parseFloat( price_now ) + parseFloat( price_min ));
 	   		if ( parseFloat( $('#input-bid-barang-harga-baru').val() ) < parseFloat( price_now ) + parseFloat( price_min )) {
@@ -107,6 +113,7 @@
 	   			$('.button-bid-barang').prop('disabled',false);
 	   		}
 	   	});
+	   	//Checker harga yang diperbolehkan
 
 	   	//Tawar Barang
 	   	$('#button-tawar-barang').click(function(){
@@ -171,12 +178,15 @@
 	   			$('#brgharga'+id_edit).html(formatRupiah(response.barang.harga_awal,'Rp. '));
 	   			$('#brgdurasi'+id_edit).html(response.lelang.durasi);
 	   			$('#brgket'+id_edit).html(response.barang.keterangan_barang);
+	   			$('.button-edit-barang').hide();
+	   			$('.button-edit-barang-cancel').val("Tutup");
 	   		}).fail(function(response){
 	   			print(response);
 	   		})
 	   	});
 	   	//Edit barang
 
+	   	//Change Status Lelang
 	   	$('.toggle_lelang').change(function(){
 	   		if ($(this).prop('checked')==true) {
 	   			$.post('changeStatus',{_token:csrf_,id:$(this).attr('dataID'),status:'ON GOING'},function(response){
@@ -205,12 +215,17 @@
 	   		$.post('changeStatus',{_token:csrf_,id:IDtoEND,status:'ENDED'},function(response){
 
    			}).done(function(response){
-   				$('#tgl_lelang'+IDtoEND).hide();
+   				$('#brgstatus'+IDtoEND).empty();
+   				$('#brgstatus'+IDtoEND).append(
+   					'<br><hr>'+
+   					'<button class="btn btn-danger btn_end_lelang" disabled>SELESAIKAN</button>'
+   				);
    				alert(response.message);
    			}).fail(function(response){
    				print(response);
    			});
 	   	});
+	   	//Change Status Lelang
 
 	   	//Hapus barang
 	   	$('.barang_hapus').click(function(){
@@ -227,12 +242,15 @@
 	   			$('#barang'+id_hapus).remove();
 	   			$('.text-del-response-barang').text(response.message);
 	   			$('.text-del-response-barang').show();
+	   			$('.button-del-barang').hide();
+	   			$('.button-del-barang-cancel').val('Tutup');
 	   		}).fail(function(response){
 	   			print(response);
-	   		})
+	   		});
 	   	});
 	   	//Hapus barang
 
+	   	//Edit profile
 	   	$('#profile_edit').click(function(){
 			$('#profile_name').prop('disabled', false);
 			$('#profile_alamat').prop('disabled', false);
@@ -262,5 +280,62 @@
 	   			print(response);
 	   		});
 	   	});
+
+	   	$('#profile_cancel').click(function(){
+	   		$('#profile_name').prop('disabled', true);
+			$('#profile_alamat').prop('disabled', true);
+			$('#profile_telepon').prop('disabled', true);
+			$('#profile_submit').hide();
+			$('#profile_cancel').hide();
+			$('#profile_edit').show();
+	   	});
+	   	//Edit profile
+
+	   	//Beli
+	   	$('.penawaran_buy').click(function(){
+	   		id_beli = $(this).attr('dataID');
+	   		$('.text-beli-response-barang').hide();
+	   		print(id_beli);
+	   	});
+
+	   	$('.button-beli-barang').click(function(){
+	   		$.post('toTrans',{_token:csrf_,id:id_beli},function(response){
+	   			print(id_beli);
+	   		}).done(function(response){
+	   			$('.text-beli-response-barang').text(response.message);
+	   			$('.text-beli-response-barang').show();
+	   			$('.button-beli-barang').hide();
+	   			$('.button-beli-barang-cancel').val("Tutup");
+	   		}).fail(function(response){
+	   			print(response);
+	   		})
+	   	});
+	   	//Beli
+
+	   	//Jual
+		$('.penawaran_jual').click(function(){
+	   		id_jual = $(this).attr('dataID');
+	   		$('.text-jual-response-barang').hide();
+	   		print(id_jual);
+	   	});
+
+	   	$('.button-jual-barang').click(function(){
+	   		$.post('juallelang',{_token:csrf_,id:id_jual},function(response){
+	   			print(id_jual);
+	   		}).done(function(response){
+	   			$('.text-jual-response-barang').text(response.message);
+	   			$('.text-jual-response-barang').show();
+	   			$('#status_transaksi_jual'+id_jual).text('Barang telah dikonfirmasi penjual.');
+	   			$('#body-transaksi-jual'+id_jual).empty();
+	   			$('#body-transaksi-jual'+id_jual).append(
+	   				'<button class="btn btn-success penawaran_jual" disabled>Jual</button>'
+	   			);
+	   			$('.button-jual-barang').hide();
+	   			$('.button-jual-barang-cancel').val("Tutup");
+	   		}).fail(function(response){
+	   			print(response);
+	   		})
+	   	});
+	   	//Jual
 	});
 </script>

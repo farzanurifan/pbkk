@@ -46,9 +46,7 @@ Route::middleware(['auth','verified'])->group(function(){
 	Route::post('/baranglelangs','BarangController@updateBarangLelang');
 
 	Route::get('/profile', 'HomeController@profile')->name('profile');
-	Route::get('/testprofile',function(){
-		return view('testprofile');
-	});
+	
 	Route::post('/updatepp','HomeController@updatepp');
 	Route::post('/editprofile', 'HomeController@store');
 
@@ -56,7 +54,12 @@ Route::middleware(['auth','verified'])->group(function(){
 	Route::post('/lelangBuat','LelangController@addLelang')->name('lelang_store');
 	Route::post('/changeStatus','LelangController@changeStatus');
 
+	Route::post('/toTrans','LelangController@changeStatusBeli');
 	Route::post('/lelang/updateBid','LelangController@updateHarga');
+	Route::get('/beli','LelangController@beliShow')->name('kelola_barang_beli');
+	Route::get('/jual','LelangController@jualShow')->name('kelola_barang_jual');
+	Route::post('/belilelang','LelangController@beli')->name('lelang_barang_beli');
+	Route::post('/juallelang','LelangController@jual')->name('lelang_barang_jual');
 });
 
 Route::group(['middleware' => ['admin']], function() {

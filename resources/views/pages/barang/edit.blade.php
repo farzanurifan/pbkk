@@ -29,7 +29,7 @@
 					<h4 class="text-success text-edit-response-barang"></h4>
 				</div>
 				<div class="modal-footer">
-					<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+					<input type="button" class="btn btn-default button-edit-barang-cancel" data-dismiss="modal" value="Cancel">
 					<input type="submit" class="btn btn-info button-edit-barang" value="Save">
 				</div>
 			</div>
