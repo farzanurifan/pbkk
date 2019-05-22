@@ -89,9 +89,15 @@ class LelangController extends Controller
 
     public function searchByKategori($id)
     {
-        $lelangs = Lelang::whereHas('Barang',function($query) use($id){
-            $query->where('tipebarang_id',$id);
-        })->where('status','ON GOING')->orderBy('created_at','desc')->get();
+        if ($id == "all") {
+            $lelangs = Lelang::where('status','ON GOING')->orderBy('created_at','desc')->get();
+        }
+        else
+        {
+            $lelangs = Lelang::whereHas('Barang',function($query) use($id){
+                $query->where('tipebarang_id',$id);
+            })->where('status','ON GOING')->orderBy('created_at','desc')->get();
+        }
 
         foreach ($lelangs as $lelang) {
             $barang = $lelang->Barang()->first();
@@ -101,6 +107,21 @@ class LelangController extends Controller
         return Response::json([
             'lelang' => $lelangs
         ]);
+    }
+
+    public function searchByKatt($id)
+    {
+        $lelangs = Lelang::whereHas('Barang',function($query) use($id){
+            $query->where('tipebarang_id',$id);
+        })->where('status','ON GOING')->orderBy('created_at','desc')->get();   
+
+        foreach ($lelangs as $lelang) {
+            $barang = $lelang->Barang()->first();
+            $lelang->{'path'} = $barang->path;
+            $lelang->{'nama_barang'} = $barang->nama_barang;
+        }
+        $tipebarangs = TipeBarang::all();
+        return view('pages.lelang.kategori',compact('lelangs','tipebarangs'));
     }
 
     public function kategori()

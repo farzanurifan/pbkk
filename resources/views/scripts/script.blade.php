@@ -26,20 +26,6 @@
 	   	var id_jual;
 
 
-	   	//Croppie
-	   	$uploadCrop = $('#upload-demo').croppie({
-		    enableExif: true,
-		    viewport: {
-		        width: 200,
-		        height: 200,
-		        type: 'square'
-		    },
-		    boundary: {
-		        width: 300,
-		        height: 300
-		    }
-		});
-
 	   	$('#id-kat-brg').change(function(){
 	   		idkat = $('#id-kat-brg').val();
 	   		$('#profilepp_response_msg').hide();
@@ -69,6 +55,20 @@
 	   			}
 	   		});
 	   	});
+
+	   	//Croppie
+	   	$uploadCrop = $('#upload-demo').croppie({
+		    enableExif: true,
+		    viewport: {
+		        width: 200,
+		        height: 200,
+		        type: 'square'
+		    },
+		    boundary: {
+		        width: 300,
+		        height: 300
+		    }
+		});
 
 	   	$('#uploadProfile').on('change', function () { 
 			var reader = new FileReader();

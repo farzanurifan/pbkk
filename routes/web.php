@@ -16,6 +16,7 @@ Route::get('/', 'LelangController@index')->name('landing');
 Auth::routes(['verify' => true]);
 
 Route::get('/kategori', 'LelangController@kategori')->name('kategori');
+Route::get('/kategori/{kat}', 'LelangController@searchByKatt');
 Route::get('/searchByKat/{id}', 'LelangController@searchByKategori');
 Route::post('/search','BarangController@search')->name('searchItem');
 Route::get('/filterbarang', 'HomeController@filterbarang')->name('filterbarang');

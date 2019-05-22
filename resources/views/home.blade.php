@@ -72,7 +72,7 @@
 
           <div class="col-lg-2 col-md-2" style="padding: 10px">
             <div class="portfolio-item wow fadeInUp">
-              <a href="/kategori/elektronik" class="" >
+              <a href="{{URL::to('/kategori/1')}}" class="" >
                 <img src="img/bb.jpg" alt="">
                 <div class="portfolio-overlay">
                   <div class="portfolio-info"><h2 class="wow fadeInUp"></h2></div>
@@ -88,7 +88,7 @@
 
           <div class="col-lg-2 col-md-2" style="padding: 10px">
             <div class="portfolio-item wow fadeInUp">
-              <a href="/kategori/pria" class="" >
+              <a href="{{URL::to('/kategori/2')}}" class="" >
                 <img src="img/cc.jpg" alt="">
                 <div class="portfolio-overlay">
                   <div class="portfolio-info"><h2 class="wow fadeInUp"></h2></div>
@@ -104,7 +104,7 @@
 
           <div class="col-lg-2 col-md-2" style="padding: 10px">
             <div class="portfolio-item wow fadeInUp">
-              <a href="/kategori/wanita" class="" >
+              <a href="{{URL::to('/kategori/3')}}" class="" >
                 <img src="img/dd.jpg" alt="">
                 <div class="portfolio-overlay">
                   <div class="portfolio-info"><h2 class="wow fadeInUp"></h2></div>
@@ -120,7 +120,7 @@
 
           <div class="col-lg-2 col-md-2" style="padding: 10px">
             <div class="portfolio-item wow fadeInUp">
-              <a href="/kategori/buku" class="" >
+              <a href="{{URL::to('/kategori/4')}}" class="" >
                 <img src="img/ee.jpg" alt="">
                 <div class="portfolio-overlay">
                   <div class="portfolio-info"><h2 class="wow fadeInUp"></h2></div>
@@ -136,7 +136,7 @@
 
           <div class="col-lg-2 col-md-2" style="padding: 10px">
             <div class="portfolio-item wow fadeInUp">
-              <a href="/kategori/furniture" class="" >
+              <a href="{{URL::to('/kategori/5')}}" class="" >
                 <img src="img/ff.jpg" alt="">
                 <div class="portfolio-overlay">
                   <div class="portfolio-info"><h2 class="wow fadeInUp"></h2></div>
@@ -152,7 +152,7 @@
 
           <div class="col-lg-2 col-md-2" style="padding: 10px">
             <div class="portfolio-item wow fadeInUp">
-              <a href="/kategori/kendaraan" class="" >
+              <a href="{{URL::to('/kategori/6')}}" class="" >
                 <img src="img/ii.jpg" alt="">
                 <div class="portfolio-overlay">
                   <div class="portfolio-info"><h2 class="wow fadeInUp"></h2></div>
