@@ -59,6 +59,9 @@
             </div>
             <nav id="nav-menu-container">
                 <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a class="nav-link" target="_blank" href="{{asset('docs/faq.pdf')}}">{{ __('Panduan') }}</a>
+                    </li>
                     @guest
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
