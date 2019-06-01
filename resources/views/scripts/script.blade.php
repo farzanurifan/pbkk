@@ -40,7 +40,7 @@
 		   				'<div class="col-lg-3 col-md-3" style="padding: 10px">'+
 		                  '<div class="portfolio-item wow fadeInUp">'+
 		                    '<a href="'+urlnya+'" class="" >'+
-		                      '<img src="'+public_path+response.lelang[i].path+'" alt="">'+
+		                      '<img src="'+public_path+response.lelang[i].path+'" alt="" style="width: 200px;height: 200px;">'+
 		                      '<div class="portfolio-overlay">'+
 		                        '<div class="portfolio-info"><h2 class="wow fadeInUp"></h2></div>'+
 
@@ -143,6 +143,7 @@
 	   				$('.rightside-panel').append('<label>Anda penawar tertinggi</label>')
 	   				$('.button-bid-cancel').val("Tutup");
 	   				$('.button-bid-barang').hide();
+	   				$('#count_lelang').text(response.count);
 	   				$('.text-bid-response-barang').text(response.message);
 	   				$('#input-bid-barang-harga').val( formatRupiah($('#input-bid-barang-harga-baru').val(),'Rp. ') );
 	   			} 
@@ -157,6 +158,8 @@
 
 	   	//Edit barang
 	   	$('.barang_edit').click(function(){
+	   		$('.button-edit-barang').show();
+	   		$('.button-edit-barang-cancel').val("Cancel");
 	   		id_edit = $(this).attr('dataID');
 	   		$('.text-edit-response-barang').hide();
 	   		$.get('baranglelang/'+id_edit,function(response){
@@ -229,6 +232,8 @@
 
 	   	//Hapus barang
 	   	$('.barang_hapus').click(function(){
+	   		$('.button-del-barang').show();
+	   		$('.button-del-barang-cancel').val('Cancel');
 	   		id_hapus = $(this).attr('dataID');
 	   		$('.text-del-response-barang').hide();
 	   		print(id_hapus);
@@ -293,6 +298,8 @@
 
 	   	//Beli
 	   	$('.penawaran_buy').click(function(){
+	   		$('.button-beli-barang').show();
+	   		$('.button-beli-barang-cancel').val("Cancel");
 	   		id_beli = $(this).attr('dataID');
 	   		$('.text-beli-response-barang').hide();
 	   		print(id_beli);
@@ -304,6 +311,9 @@
 	   		}).done(function(response){
 	   			$('.text-beli-response-barang').text(response.message);
 	   			$('.text-beli-response-barang').show();
+	   			$('#historitran'+id_beli).empty().append(
+	   				'<button style="text-align: center" class="btn btn-info penawaran_buy" data-toggle="modal" disabled>Beli</button>'
+	   			);
 	   			$('.button-beli-barang').hide();
 	   			$('.button-beli-barang-cancel').val("Tutup");
 	   		}).fail(function(response){
@@ -314,6 +324,8 @@
 
 	   	//Jual
 		$('.penawaran_jual').click(function(){
+			$('.button-jual-barang').show();
+	   		$('.button-jual-barang-cancel').val("Cancel");
 	   		id_jual = $(this).attr('dataID');
 	   		$('.text-jual-response-barang').hide();
 	   		print(id_jual);

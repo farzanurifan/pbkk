@@ -17,6 +17,7 @@ Auth::routes(['verify' => true]);
 
 Route::get('/kategori', 'LelangController@kategori')->name('kategori');
 Route::get('/kategori/{kat}', 'LelangController@searchByKatt');
+Route::get('/kategori/searchByKat/{kat}', 'LelangController@searchByKategori');
 Route::get('/searchByKat/{id}', 'LelangController@searchByKategori');
 Route::post('/search','BarangController@search')->name('searchItem');
 Route::get('/filterbarang', 'HomeController@filterbarang')->name('filterbarang');
@@ -44,6 +45,7 @@ Route::middleware(['auth','verified'])->group(function(){
 
 	Route::get('/baranglelang/{id}', 'BarangController@getBarangLelang');
 	Route::get('/lelang/baranglelang/{id}', 'BarangController@getBarangLelang');
+	Route::post('/lelang/stat/changeStatus','LelangController@changeStatus');
 	Route::post('/baranglelangs','BarangController@updateBarangLelang');
 
 	Route::get('/profile', 'HomeController@profile')->name('profile');

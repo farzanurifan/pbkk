@@ -67,7 +67,7 @@
               <div class="col-lg-3 col-md-6 rightside-panel">
                   <div class="member"  >
                     <div class="details" style="color: black">
-                      <h4 style="font-size: 25px">Terdapat<br><span style="color: red;font-size:25px ">{{$counter}}</span>Pelelang</h4>
+                      <h4 style="font-size: 25px">Terdapat<br><span id="count_lelang" style="color: red;font-size:25px ">{{$counter}}</span>Pelelang</h4>
                       <hr>
                       <span style="font-size: 20px;color: red"><b id="bid_harga_sekarang">Rp. {{number_format($lelang->harga,2,',','.')}}</b></span>
                       <span>Pelelang dengan penawaran harga tertinggi terakhir akan menjadi pembeli resmi</span>
@@ -94,6 +94,8 @@
   </section>
 
   <script type="text/javascript">
+    var csrf_ = $('meta[name="csrf-token"]').attr('content');
+    var print = console.log;
     var clock;
 
     var lelang = {!! json_encode($lelang->toArray()) !!};
@@ -105,7 +107,18 @@
     var diff = tanggalBerakhir.getTime() / 1000 - currentDate.getTime() / 1000;
 
     if (diff <= 0){
-      diff = 0;
+        diff = 0;
+        print("Hehe");
+        $.post('stat/changeStatus',{_token:csrf_,id:lelang.id,status:'ENDED'},function(response){
+            alert(lelang.id);
+        }).done(function(response){
+            $('#button-tawar-barang').remove();
+            $('.rightside-panel').append(
+                '<b><label style="color: green">Lelang telah selesai.</label><b>'
+            );
+        }).fail(function(response){
+            print(response);
+        })
     }
     
     $(document).ready(function() {      

@@ -45,11 +45,11 @@
                   <p>User lain memegang penawaran tertinggi.</p>
                 @endif
               </td>
-              <td style="text-align: center">
+              <td style="text-align: center"  id="historitran{{$histori->lelang_id}}">
                 @if($histori->Lelang->penawar_id == Auth::user()->id && $histori->Lelang->status == "ENDED" && $histori->Lelang->status_transaksi == "")
                   <a style="text-align: center" dataID="{{$histori->lelang_id}}" class="btn btn-info penawaran_buy" href="#beliPenawaranModal" data-toggle="modal">Beli</a>
                 @elseif($histori->Lelang->status_transaksi != "")
-                  <button style="text-align: center" dataID="{{$histori->lelang_id}}" class="btn btn-info penawaran_buy" data-toggle="modal" disabled="">Beli</button>
+                  <button style="text-align: center" dataID="{{$histori->lelang_id}}" class="btn btn-info penawaran_buy" data-toggle="modal" disabled>Beli</button>
                 @else
                   <button style="text-align: center" class="btn btn-info penawaran_buy" data-toggle="modal" disabled>Beli</button>
                 @endif

@@ -188,8 +188,12 @@ class LelangController extends Controller
             ]);
         }
 
+        $lelangs = HistoriPenawaran::where('lelang_id',$req->id)->get();
+        $count_lelang = count($lelangs);
+
         return Response::json([
-            'message' => "Data penawaran anda telah dimasukkan. Anda penawar tertinggi saat ini."
+            'message' => "Data penawaran anda telah dimasukkan. Anda penawar tertinggi saat ini.",
+            'count' => $count_lelang
         ]);
     }
 }
