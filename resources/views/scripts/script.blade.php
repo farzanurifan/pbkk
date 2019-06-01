@@ -296,6 +296,58 @@
 	   	});
 	   	//Edit profile
 
+	   	//Edit Password
+	   	$('#security_edit').click(function(){
+	   		$('#security_old').prop('disabled',false);
+	   		$('#security_new').prop('disabled',false);
+	   		$('#security_conf').prop('disabled',false);
+	   		$('#security_edit').hide();
+	   		$('#security_response_msg').hide();
+	   		$('#security_submit').show();
+	   		$('#security_cancel').show();
+	   	});
+
+	   	$('#security_cancel').click(function(){
+	   		$('#security_old').prop('disabled',true);
+	   		$('#security_new').prop('disabled',true);
+	   		$('#security_conf').prop('disabled',true);
+	   		$('#security_edit').show();
+	   		$('#security_submit').hide();
+	   		$('#security_cancel').hide();
+	   	});
+
+	   	$('#security_submit').click(function(){
+	   		$('#security_response_msg').hide();
+	   		pass_old = $('#security_old').val();
+	   		pass_new = $('#security_new').val();
+	   		pass_conf = $('#security_conf').val();
+	   		$.post('editpassword',{_token:csrf_,id:$('#security_id').val(),pass_old:pass_old,pass_new:pass_new,pass_conf:pass_conf},function(response){
+
+	   		}).done(function(response){
+	   			msg_nya = response.message;
+	   			if (msg_nya == 'Password telah berhasil diubah.'){
+	   				$('#security_response_msg').text(response.message).show();
+		   			$('#security_old').val("").prop('disabled',true);
+			   		$('#security_new').val("").prop('disabled',true);
+			   		$('#security_conf').val("").prop('disabled',true);
+			   		$('#security_edit').show();
+			   		$('#security_submit').hide();
+			   		$('#security_cancel').hide();	
+	   			} 
+	   			else{
+	   				$('#security_response_msg').text(response.message).show();
+	   				$('#security_old').val("");
+			   		$('#security_new').val("");
+			   		$('#security_conf').val("");
+	   			}
+	   			
+
+	   		}).fail(function(response){
+	   			print(response);
+	   		})
+	   	});
+	   	//Edit Password
+
 	   	//Beli
 	   	$('.penawaran_buy').click(function(){
 	   		$('.button-beli-barang').show();

@@ -49,6 +49,32 @@
                     <p id="profile_response_msg" style="display: none"></p>
                 </div>
             </div>
+            <hr>
+            <div class="card">
+                <div class="card-header">{{ __('Keamanan') }}<span><a id="security_edit" style="float: right;"><i class="fa fa-pencil-square-o" style="font-size:30px;float: right;"></i></a></span></div>
+
+                <div class="card-body">
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Password Lama</label>
+                        <input id="security_id" value="{{Auth::user()->id}}" hidden>
+                        <input disabled id="security_old" placeholder="Password Lama" class="form-control"  type="password">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Password Baru</label>
+                        <input disabled id="security_new" placeholder="Password Baru" class="form-control" type="password">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Konfirmasi Password Baru</label>
+                        <input disabled name="phone" id="security_conf" placeholder="Konfirmasi Password Baru" class="form-control" type="password">
+                    </div>
+
+                    <button id="security_submit" class="btn btn-success" style="display: none;">Submit</button>
+                    <button id="security_cancel" class="btn btn-danger" style="display: none;">Cancel</button>
+                    <p id="security_response_msg" style="display: none"></p>
+                </div>
+            </div>
         </div>
     </div>
 </div>

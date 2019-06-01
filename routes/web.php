@@ -52,6 +52,7 @@ Route::middleware(['auth','verified'])->group(function(){
 	
 	Route::post('/updatepp','HomeController@updatepp');
 	Route::post('/editprofile', 'HomeController@store');
+	Route::post('/editpassword','HomeController@updatepw');
 
 	Route::get('/make','LelangController@make')->name('make');
 	Route::post('/lelangBuat','LelangController@addLelang')->name('lelang_store');

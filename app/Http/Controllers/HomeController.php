@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use Response;
 use Image;
+use Illuminate\Support\Facades\Hash;
 
 class HomeController extends Controller
 {
@@ -66,6 +67,38 @@ class HomeController extends Controller
 
         return Response::json([
             'message' => "Foto profil sukses diubah."
+        ]);
+    }
+
+    public function updatepw(Request $req)
+    {
+        $pass_old = $req->pass_old;
+        $pass_new = $req->pass_new;
+        $pass_conf = Hash::make($req->pass_conf);
+
+        $user = User::where('id',$req->id)->first();
+
+        if (Hash::check($pass_old,$user->password)) {
+            if (Hash::check($pass_new, $pass_conf)) {
+                if (Hash::check($pass_old,Hash::make($pass_new))) {
+                    return Response::json([
+                        'message' => 'Password baru tidak boleh sama dengan password lama.'
+                    ]);
+                }
+                User::where('id',$req->id)->update([
+                    'password' => $pass_conf
+                ]);
+
+                return Response::json([
+                    'message' => 'Password telah berhasil diubah.'
+                ]);
+            }
+            return Response::json([
+                'message' => 'Pastikan password baru yang anda masukkan sama dengan konfirmasi password.'
+            ]);
+        }
+        return Response::json([
+            'message' => 'Password lama salah.'
         ]);
     }
 }
